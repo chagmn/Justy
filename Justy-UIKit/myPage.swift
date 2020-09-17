@@ -21,13 +21,18 @@ class myPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
-       
+        
+        let backBtn = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBtn
+        
         naviBar.isTranslucent = false
+        naviBar.tintColor = .white
         naviBar.barTintColor = mainColor
         naviBar.topItem?.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(leftButtonAction))
-        naviBar.tintColor = .white
         naviBar.topItem?.title = ""
         
+        userImage.image = UIImage(systemName: "person")
+        //userImage.tintColor = 
         userImage.backgroundColor = .lightGray
         userImage.layer.cornerRadius = userImage.frame.height/2
         userImage.layer.borderWidth = 1
@@ -61,6 +66,10 @@ class myPage: UIViewController {
     }
     
     @objc func leftButtonAction(){
-        //회원 탭으로 이동
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerListView"){
+            controller.modalPresentationStyle = .currentContext
+            //controller.modalTransitionStyle = .coverVertical
+            self.present(controller, animated: true, completion: nil)
+        }
     }
 }
