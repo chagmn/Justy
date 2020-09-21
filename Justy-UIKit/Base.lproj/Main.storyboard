@@ -353,27 +353,39 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41f-DF-boS">
-                                <rect key="frame" x="15" y="59" width="30" height="30"/>
+                                <rect key="frame" x="15" y="54" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="AWW-Jh-iKy"/>
                                     <constraint firstAttribute="height" constant="30" id="Tma-Sq-kmN"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
+                                </state>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xUh-W7-nNi">
+                                <rect key="frame" x="10" y="84" width="355" height="583"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="556-PE-WKc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="41f-DF-boS" firstAttribute="top" secondItem="EHk-xl-CHl" secondAttribute="bottom" constant="15" id="CCx-QR-42q"/>
+                            <constraint firstItem="41f-DF-boS" firstAttribute="top" secondItem="EHk-xl-CHl" secondAttribute="bottom" constant="10" id="CCx-QR-42q"/>
                             <constraint firstItem="EHk-xl-CHl" firstAttribute="leading" secondItem="556-PE-WKc" secondAttribute="leading" id="Gc6-SB-3QE"/>
+                            <constraint firstItem="xUh-W7-nNi" firstAttribute="leading" secondItem="556-PE-WKc" secondAttribute="leading" constant="10" id="L7v-QT-KlV"/>
+                            <constraint firstItem="xUh-W7-nNi" firstAttribute="top" secondItem="41f-DF-boS" secondAttribute="bottom" id="OOV-t1-TLi"/>
                             <constraint firstItem="EHk-xl-CHl" firstAttribute="trailing" secondItem="556-PE-WKc" secondAttribute="trailing" id="Wdz-DG-fv7"/>
                             <constraint firstItem="EHk-xl-CHl" firstAttribute="top" secondItem="556-PE-WKc" secondAttribute="top" id="fpU-sR-pD1"/>
+                            <constraint firstItem="556-PE-WKc" firstAttribute="bottom" secondItem="xUh-W7-nNi" secondAttribute="bottom" id="hgn-2Z-7Ws"/>
                             <constraint firstItem="41f-DF-boS" firstAttribute="leading" secondItem="556-PE-WKc" secondAttribute="leading" constant="15" id="wEB-rp-YmU"/>
+                            <constraint firstItem="556-PE-WKc" firstAttribute="trailing" secondItem="xUh-W7-nNi" secondAttribute="trailing" constant="10" id="zNa-9h-hcD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="41f-DF-boS" id="VJn-np-ucm"/>
                         <outlet property="naviBar" destination="EHk-xl-CHl" id="jrq-9n-j3x"/>
+                        <outlet property="tableView" destination="xUh-W7-nNi" id="eFh-l0-SyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sei-W4-YbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
