@@ -22,6 +22,7 @@ class customerCell: UITableViewCell {
         customerImg.tintColor = .white
         customerImg.backgroundColor = .gray
         
-        customerProgress.tintColor = .systemGreen
+        //customerProgress.tintColor = .systemGreen
+        customerProgress.tintColor = mainColor
     }
 }

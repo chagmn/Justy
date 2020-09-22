@@ -348,7 +348,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-xl-CHl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="ahP-hl-o5X"/>
+                                    <navigationItem title="Title" id="ahP-hl-o5X">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="LF5-7D-ab0">
+                                            <connections>
+                                                <action selector="goBack:" destination="YrS-rB-hi4" id="1aI-Ib-X2k"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41f-DF-boS">
@@ -383,6 +389,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="41f-DF-boS" id="VJn-np-ucm"/>
+                        <outlet property="leftBtn" destination="LF5-7D-ab0" id="MFJ-3H-GWQ"/>
                         <outlet property="naviBar" destination="EHk-xl-CHl" id="jrq-9n-j3x"/>
                         <outlet property="tableView" destination="xUh-W7-nNi" id="eFh-l0-SyV"/>
                     </connections>

@@ -69,7 +69,7 @@ class myPage: UIViewController {
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerListView"){
             controller.modalPresentationStyle = .currentContext
             //controller.modalTransitionStyle = .coverVertical
-            self.present(controller, animated: true, completion: nil)
+            self.present(controller, animated: false, completion: nil)
         }
     }
 }

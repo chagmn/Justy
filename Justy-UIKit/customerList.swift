@@ -14,6 +14,7 @@ class customerList: UIViewController{
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var leftBtn: UIBarButtonItem!
     
     let customerInfo = [("일번",0.1),("이번",0.3),("삼번",0.5),("사번",0.7),("오번",0.9),]
     
@@ -29,9 +30,13 @@ class customerList: UIViewController{
         //naviBar.topItem?.le.backBarButtonItem = UIBarButtonItem(title : "Back", style: .plain, target: self, action: #selector(goBack))
         naviBar.shadowImage = UIImage()
 
+        leftBtn.title = ""
+        leftBtn.image = UIImage(systemName: "chevron.backward")
+        leftBtn.tintColor = .white
+
         
         addButton.setTitle("", for: .normal)
-        addButton.tintColor = .systemGreen
+        addButton.tintColor = mainColor
         addButton.setImage(UIImage(systemName: "person.crop.circle.badge.plus"), for: .normal)
         
         // 셀 리소스 가져오기
@@ -47,10 +52,15 @@ class customerList: UIViewController{
     
     
     
-    @objc func goBack(){
-        
+    @IBAction func goBack(_ sender: Any) {
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "myPageView"){
+            controller.modalPresentationStyle = .currentContext
+            //controller.modalTransitionStyle = .coverVertical
+            self.present(controller, animated: false, completion: nil)
+        }
     }
 }
+
 
 extension customerList: UITableViewDelegate{
     
