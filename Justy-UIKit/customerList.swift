@@ -84,5 +84,17 @@ extension customerList: UITableViewDataSource{
         return cell
     }
     
+    // 각 셀 선택됐을 때
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = tableView.indexPathForSelectedRow
+        let cell = tableView.cellForRow(at: indexPath) as! customerCell
+        
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView"){
+            controller.modalPresentationStyle = .currentContext
+            //controller.modalTransitionStyle = .coverVertical
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
     
 }
