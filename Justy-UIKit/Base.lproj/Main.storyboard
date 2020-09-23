@@ -406,7 +406,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7GS-68-TU4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" translatesAutoresizingMaskIntoConstraints="NO" id="7GS-68-TU4">
                                 <rect key="frame" x="127.5" y="94" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="cVE-0h-XvO"/>
@@ -424,9 +424,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fed-1C-aRT">
-                                <rect key="frame" x="162.5" y="279" width="50" height="25"/>
+                                <rect key="frame" x="137.5" y="279" width="100" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="oif-kT-eoS"/>
+                                    <constraint firstAttribute="width" constant="100" id="oif-kT-eoS"/>
                                     <constraint firstAttribute="height" constant="25" id="vc8-gE-neu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -440,9 +440,8 @@
                                 </constraints>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uau-bh-tM1">
-                                <rect key="frame" x="162.5" y="328" width="50" height="25"/>
+                                <rect key="frame" x="164.5" y="328" width="46" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="7ev-6D-flo"/>
                                     <constraint firstAttribute="height" constant="25" id="7p1-SP-Fm2"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -450,7 +449,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3a-5j-Omw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="YJC-qW-Z7w"/>
+                                    <navigationItem title="Title" id="YJC-qW-Z7w">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="tAV-rH-qwd">
+                                            <connections>
+                                                <action selector="goBack:" destination="YrS-rB-hi4" id="Hi9-7K-orU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T7-jg-PE1">
@@ -516,12 +521,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="tAV-rH-qwd" id="4e7-Rn-ef0"/>
                         <outlet property="checkBtn" destination="uau-bh-tM1" id="Ys3-iH-T51"/>
                         <outlet property="customerImg" destination="7GS-68-TU4" id="C1K-Ik-MqF"/>
                         <outlet property="customerName" destination="VXw-rR-tiy" id="1Fr-a8-SUf"/>
                         <outlet property="evidence1" destination="3T7-jg-PE1" id="1OG-i4-Fyr"/>
                         <outlet property="evidence2" destination="GXP-NC-yAz" id="tBC-lV-24C"/>
+                        <outlet property="naviBar" destination="d3a-5j-Omw" id="4t8-fT-U6s"/>
                         <outlet property="progress" destination="aaG-Ec-tgY" id="0ut-KU-Uvv"/>
+                        <outlet property="state" destination="fed-1C-aRT" id="nfC-wl-I1G"/>
                         <outlet property="submitBtn" destination="OE5-js-Ztx" id="FYK-Aw-SbE"/>
                         <outlet property="textfield" destination="8dE-fc-TYQ" id="bxP-11-Isi"/>
                     </connections>
@@ -533,6 +541,7 @@
     </scenes>
     <resources>
         <image name="MainLogo" width="874" height="970"/>
+        <image name="square" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

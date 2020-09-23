@@ -26,8 +26,6 @@ class customerList: UIViewController{
         naviBar.barTintColor = mainColor
         naviBar.topItem?.title = "회원 관리"
         naviBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-        
-        //naviBar.topItem?.le.backBarButtonItem = UIBarButtonItem(title : "Back", style: .plain, target: self, action: #selector(goBack))
         naviBar.shadowImage = UIImage()
 
         leftBtn.title = ""
