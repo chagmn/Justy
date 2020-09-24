@@ -9,7 +9,7 @@
 import UIKit
 
 class customerList: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+    let mainColor = #colorLiteral(red: 1, green: 0.8784313725, blue: 0.2823529412, alpha: 1)
     
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var addButton: UIButton!
