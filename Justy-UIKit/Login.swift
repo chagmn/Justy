@@ -30,6 +30,10 @@ class Login: UIViewController, UITextFieldDelegate {
         label_pw.text = "비밀번호"
         label_pw.textAlignment = .center
         
+        // 로그인 부분 삭제하기 나중에
+        textbox_ID.text = "1"
+        textbox_PW.text = "1"
+        
         textbox_PW.isSecureTextEntry = true
         self.textbox_ID.delegate = self
         self.textbox_PW.delegate = self

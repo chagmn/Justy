@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7608CB2B251CCDB700E449FA /* AddCustomer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7608CB2A251CCDB700E449FA /* AddCustomer2.swift */; };
 		7614B1C624EA88B3005359EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C524EA88B3005359EF /* AppDelegate.swift */; };
 		7614B1C824EA88B3005359EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C724EA88B3005359EF /* SceneDelegate.swift */; };
 		7614B1CA24EA88B3005359EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C924EA88B3005359EF /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7608CB2A251CCDB700E449FA /* AddCustomer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer2.swift; sourceTree = "<group>"; };
 		7614B1C224EA88B3005359EF /* Justy-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Justy-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7614B1C524EA88B3005359EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7614B1C724EA88B3005359EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				7614B1C724EA88B3005359EF /* SceneDelegate.swift */,
 				7614B1C924EA88B3005359EF /* ViewController.swift */,
 				7614B1CB24EA88B3005359EF /* Main.storyboard */,
+				7608CB2A251CCDB700E449FA /* AddCustomer2.swift */,
 				7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */,
 				76A087762519EEDD00DFF5DA /* CustomerInfo.swift */,
 				7614B1CE24EA88B5005359EF /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 				76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */,
 				7614B1CA24EA88B3005359EF /* ViewController.swift in Sources */,
 				7697AB5524ED08A300B8407E /* Join.swift in Sources */,
+				7608CB2B251CCDB700E449FA /* AddCustomer2.swift in Sources */,
 				7614B1C624EA88B3005359EF /* AppDelegate.swift in Sources */,
 				7614B1C824EA88B3005359EF /* SceneDelegate.swift in Sources */,
 				7614B1DA24EAE4B3005359EF /* Login.swift in Sources */,

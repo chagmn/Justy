@@ -36,6 +36,7 @@ class customerList: UIViewController{
         addButton.setTitle("", for: .normal)
         addButton.tintColor = mainColor
         addButton.setImage(UIImage(systemName: "person.crop.circle.badge.plus"), for: .normal)
+        addButton.addTarget(self, action: #selector(addCustomer), for: .touchUpInside)
         
         // 셀 리소스 가져오기
         let customerListNib = UINib(nibName: "customerCell", bundle: nil)
@@ -54,6 +55,14 @@ class customerList: UIViewController{
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "myPageView"){
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
+    @objc func addCustomer(){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddCustomer1"){
+            //controller.modalPresentationStyle = .currentContext
+            controller.modalTransitionStyle = .coverVertical
+            self.present(controller, animated: true, completion: nil)
         }
     }
 }

@@ -18,9 +18,10 @@ class AddCustomer1: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
          
-        icomImg.image = UIImage(systemName: "smiley.fill")
-        icomImg.tintColor = .lightGray
+        icomImg.image = UIImage(systemName: "smiley")
+        icomImg.tintColor = .black
         
         text1.text = "반갑습니다"
         text1.tintColor = .black
@@ -43,6 +44,10 @@ class AddCustomer1: UIViewController{
         nextBtn.layer.borderColor = UIColor.clear.cgColor
         nextBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        nextBtn.addTarget(self, action: #selector(nextView), for: .touchUpInside)
         
+    }
+    @objc func nextView(){
+        print("hoihohioho")
     }
 }
