@@ -16,8 +16,8 @@ class Login: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textbox_ID: UITextField!
     @IBOutlet weak var textbox_PW: UITextField!
     
-    let admin_ID: String = "admin"
-    let admin_PW: String = "1234"
+    let admin_ID: String = "1"
+    let admin_PW: String = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()

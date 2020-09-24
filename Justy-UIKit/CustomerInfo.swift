@@ -12,7 +12,7 @@ class CustomerInfo: UIViewController{
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     var evi1State:Bool = false
     var evi2State:Bool = false
-    
+
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var backBtn: UIBarButtonItem!
     @IBOutlet weak var customerImg: UIImageView!
@@ -27,7 +27,6 @@ class CustomerInfo: UIViewController{
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var textfield: UITextField!
     
-
     var name: String = ""
     var progressNum: Float = 0.0
     
@@ -36,7 +35,7 @@ class CustomerInfo: UIViewController{
         overrideUserInterfaceStyle = .light
         
         naviBar.isTranslucent = false
-        naviBar.backgroundColor = .gray
+        naviBar.barTintColor = mainColor
         naviBar.topItem?.title = "회원 관리"
         naviBar.titleTextAttributes = [.foregroundColor : UIColor.white]
         naviBar.shadowImage = UIImage()
@@ -44,6 +43,7 @@ class CustomerInfo: UIViewController{
         backBtn.title = ""
         backBtn.image = UIImage(systemName: "chevron.backward")
         backBtn.tintColor = .white
+        backBtn.action = #selector(goBack)
         
         customerImg.image = UIImage(systemName: "person")
         customerImg.backgroundColor = .lightGray
@@ -76,7 +76,7 @@ class CustomerInfo: UIViewController{
         let attributeString = NSMutableAttributedString(string: "재판 상황 확인", attributes:[ NSAttributedString.Key.underlineStyle:1.0])
         checkBtn.setAttributedTitle(attributeString, for: .normal)
         checkBtn.tintColor = .black
-        // checkBtn.addAction()
+        //checkBtn.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)()
         
         let gesture1 = UITapGestureRecognizer(target: self, action: #selector(checkclick1(_:)))
         
@@ -128,4 +128,12 @@ class CustomerInfo: UIViewController{
             evi2State = false
         }
     }
+    
+    @objc func goBack(){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerListView"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+
 }

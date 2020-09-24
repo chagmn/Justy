@@ -53,7 +53,6 @@ class customerList: UIViewController{
     @IBAction func goBack(_ sender: Any) {
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "myPageView"){
             controller.modalPresentationStyle = .currentContext
-            //controller.modalTransitionStyle = .coverVertical
             self.present(controller, animated: false, completion: nil)
         }
     }
