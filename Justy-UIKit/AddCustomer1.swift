@@ -48,6 +48,10 @@ class AddCustomer1: UIViewController{
         
     }
     @objc func nextView(){
-        print("hoihohioho")
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer2"){
+        controller.modalTransitionStyle = .coverVertical
+            self.present(controller, animated: false, completion: nil)
+            
+        }
     }
 }
