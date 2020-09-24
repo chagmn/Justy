@@ -14,6 +14,7 @@ class customerCell: UITableViewCell {
     @IBOutlet weak var customerImg: UIImageView!
     @IBOutlet weak var customerProgress: UIProgressView!
     @IBOutlet weak var customerName: UILabel!
+    @IBOutlet weak var customerInfoBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,7 @@ class customerCell: UITableViewCell {
         
         //customerProgress.tintColor = .systemGreen
         customerProgress.tintColor = mainColor
+        
+        customerInfoBtn.tintColor = .black
     }
 }

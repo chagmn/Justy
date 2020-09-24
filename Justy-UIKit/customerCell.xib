@@ -61,6 +61,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="customerImg" destination="1RO-bN-jcV" id="rF3-2t-ov5"/>
+                <outlet property="customerInfoBtn" destination="kqR-Vt-rd5" id="ns0-dT-hXN"/>
                 <outlet property="customerName" destination="eIw-oL-cW8" id="q6E-Hd-VyA"/>
                 <outlet property="customerProgress" destination="iqH-Og-bmq" id="MXs-2P-s4y"/>
             </connections>

@@ -87,11 +87,15 @@ extension customerList: UITableViewDataSource{
         let index = tableView.indexPathForSelectedRow
         let cell = tableView.cellForRow(at: indexPath) as! customerCell
         
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView"){
-            controller.modalPresentationStyle = .currentContext
-            //controller.modalTransitionStyle = .coverVertical
-            self.present(controller, animated: false, completion: nil)
+        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView") as? CustomerInfo else {
+            return
         }
+        
+        controller.name = cell.customerName.text!
+        controller.progressNum = cell.customerProgress.progress
+        controller.modalPresentationStyle = .currentContext
+        self.present(controller, animated: false, completion: nil)
+        
     }
     
     
