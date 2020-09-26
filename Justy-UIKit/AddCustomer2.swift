@@ -168,6 +168,9 @@ class AddCustomer2: UIViewController{
     
     @objc func nextview(){
         if !nameField.text!.isEmpty && !yearField.text!.isEmpty && !dayField.text!.isEmpty && !monthField.text!.isEmpty && !phoneField.text!.isEmpty{
+            guard  let controller =  self.storyboard?.instantiateViewController(identifier: "AddCustomer3") else { return }
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
         }else{
             let fail_alert = UIAlertController(title: nil, message: "정보를 다 입력해주세요.", preferredStyle: .alert)
             fail_alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
