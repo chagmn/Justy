@@ -38,7 +38,7 @@ class AddCustomer2: UIViewController{
     @IBOutlet weak var text4: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
@@ -61,14 +61,29 @@ class AddCustomer2: UIViewController{
         customerPhone.text = "전화번호"
         customerPhone.textColor = .black
         
+        nameField.delegate = self
+        nameField.tag = 1
+        
+        phoneField.delegate = self
+        phoneField.tag = 2
+        
         checkBox1.image = UIImage(systemName: "square")
+        checkBox1.isUserInteractionEnabled = true
         checkBox1.tintColor = .black
+        checkBox1.tag = 11
+        checkBox1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick(_:))))
         
         checkBox2.image = UIImage(systemName: "square")
         checkBox2.tintColor = .black
+        checkBox2.isUserInteractionEnabled = true
+        checkBox2.tag = 12
+        checkBox2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick(_:))))
         
         checkBox3.image = UIImage(systemName: "square")
         checkBox3.tintColor = .black
+        checkBox3.isUserInteractionEnabled = true
+        checkBox3.tag = 13
+        checkBox3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick(_:))))
         
         yearField.delegate = self
         yearField.textAlignment = .center
@@ -77,22 +92,24 @@ class AddCustomer2: UIViewController{
         dayField.delegate = self
         dayField.textAlignment = .center
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(checkclick3(_:)))
-                                            
+        
         text2.text = "초혼"
+        text2.tag = 11
         text2.textColor = .black
         text2.isUserInteractionEnabled = true
-        text2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick1(_:))))
+        text2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick(_:))))
         
         text3.text = "재혼"
+        text3.tag = 12
         text3.textColor = .black
         text3.isUserInteractionEnabled = true
-        text3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick2(_:))))
+        text3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick(_:))))
         
         text4.text = "이혼 경험"
+        text4.tag = 13
         text4.textColor = .black
         text4.isUserInteractionEnabled = true
-        text4.addGestureRecognizer(gesture)
+        text4.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkclick(_:))))
         
         nextBtn.setTitle("next>", for: .normal)
         nextBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
@@ -109,6 +126,7 @@ class AddCustomer2: UIViewController{
         // 오토 레이아웃 함수 호출
         AutoConstraints()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func createPickerViews(){
@@ -158,33 +176,35 @@ class AddCustomer2: UIViewController{
         }
     }
     
-    @objc func checkclick1(_ sender: UITapGestureRecognizer){
-        if !checkState1{
-            checkBox1.image = UIImage(systemName: "checkmark.square")
-            checkState1 = true
-        }else {
-            checkBox1.image = UIImage(systemName: "square")
-            checkState1 = false
-        }
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0
     }
     
-    @objc func checkclick2(_ sender: UITapGestureRecognizer){
-        if !checkState2{
-            checkBox2.image = UIImage(systemName: "checkmark.square")
-            checkState2 = true
-        }else {
-            checkBox2.image = UIImage(systemName: "square")
-            checkState2 = false
-        }
-    }
-    
-    @objc func checkclick3(_ sender: UITapGestureRecognizer){
-        if !checkState3{
-            checkBox3.image = UIImage(systemName: "checkmark.square")
-            checkState3 = true
-        }else {
-            checkBox3.image = UIImage(systemName: "square")
-            checkState3 = false
+    @objc func checkclick(_ sender: UITapGestureRecognizer){
+        if sender.view?.tag == 11 {
+            if !checkState1{
+                checkBox1.image = UIImage(systemName: "checkmark.square")
+                checkState1 = true
+            }else {
+                checkBox1.image = UIImage(systemName: "square")
+                checkState1 = false
+            }
+        } else if sender.view?.tag == 12 {
+            if !checkState2{
+                checkBox2.image = UIImage(systemName: "checkmark.square")
+                checkState2 = true
+            }else {
+                checkBox2.image = UIImage(systemName: "square")
+                checkState2 = false
+            }
+        } else if sender.view?.tag == 13 {
+            if !checkState3{
+                checkBox3.image = UIImage(systemName: "checkmark.square")
+                checkState3 = true
+            }else {
+                checkBox3.image = UIImage(systemName: "square")
+                checkState3 = false
+            }
         }
     }
     
@@ -287,7 +307,14 @@ class AddCustomer2: UIViewController{
 }
 
 extension AddCustomer2: UITextFieldDelegate{
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1{
+            nameField.resignFirstResponder()
+        }else if textField.tag == 2{
+            phoneField.resignFirstResponder()
+        }
+        return true
+    }
 }
 
 extension AddCustomer2: UIPickerViewDelegate{

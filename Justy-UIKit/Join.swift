@@ -90,7 +90,7 @@ class Join: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicke
         toolBar.isUserInteractionEnabled = true
         textbox_type.inputAccessoryView = toolBar
     }
-    
+
     @objc func action(){
         self.view.endEditing(true)
     }
