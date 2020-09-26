@@ -10,6 +10,9 @@ import UIKit
 
 class AddCustomer2: UIViewController{
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+    let year: [Int] = Array(1950...2020)
+    let month: [Int] = Array(1...12)
+    let day: [Int] = Array(1...31)
     var checkState1 = false
     var checkState2 = false
     var checkState3 = false
@@ -67,6 +70,12 @@ class AddCustomer2: UIViewController{
         checkBox3.image = UIImage(systemName: "square")
         checkBox3.tintColor = .black
         
+        yearField.delegate = self
+        yearField.textAlignment = .center
+        monthField.delegate = self
+        monthField.textAlignment = .center
+        dayField.delegate = self
+        dayField.textAlignment = .center
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(checkclick3(_:)))
                                             
@@ -95,12 +104,58 @@ class AddCustomer2: UIViewController{
         nextBtn.layer.borderColor = UIColor.clear.cgColor
         nextBtn.addTarget(self, action: #selector(nextview), for: .touchUpInside)
         
+        createPickerViews()
+        dismissPickerView()
         // 오토 레이아웃 함수 호출
         AutoConstraints()
+        
+    }
+    
+    func createPickerViews(){
+        let yearPickerView = UIPickerView()
+        yearPickerView.tag = 1
+        yearPickerView.delegate = self
+        yearField.inputView = yearPickerView
+        
+        let monthPickerView = UIPickerView()
+        monthPickerView.tag = 2
+        monthPickerView.delegate = self
+        monthField.inputView = monthPickerView
+        
+        let dayPickerView = UIPickerView()
+        dayPickerView.tag = 3
+        dayPickerView.delegate = self
+        dayField.inputView = dayPickerView
+    }
+    
+    func dismissPickerView(){
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        var items: [UIBarButtonItem] = []
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let button = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(self.action))
+        items.append(flexibleSpace)
+        items.append(button)
+        
+        toolBar.setItems(items, animated: true)
+        toolBar.isUserInteractionEnabled = true
+        yearField.inputAccessoryView = toolBar
+        monthField.inputAccessoryView = toolBar
+        dayField.inputAccessoryView = toolBar
+    }
+    
+    @objc func action(){
+        self.view.endEditing(true)
     }
     
     @objc func nextview(){
-        
+        if !nameField.text!.isEmpty && !yearField.text!.isEmpty && !dayField.text!.isEmpty && !monthField.text!.isEmpty && !phoneField.text!.isEmpty{
+        }else{
+            let fail_alert = UIAlertController(title: nil, message: "정보를 다 입력해주세요.", preferredStyle: .alert)
+            fail_alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            present(fail_alert, animated: false, completion: nil)
+
+        }
     }
     
     @objc func checkclick1(_ sender: UITapGestureRecognizer){
@@ -229,4 +284,49 @@ class AddCustomer2: UIViewController{
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
+}
+
+extension AddCustomer2: UITextFieldDelegate{
+    
+}
+
+extension AddCustomer2: UIPickerViewDelegate{
+    
+}
+
+extension AddCustomer2: UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag == 1{
+            return year.count
+        } else if pickerView.tag == 2{
+            return month.count
+        } else {
+            return day.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 1{
+            return String(year[row])
+        } else if pickerView.tag == 2{
+            return String(month[row])
+        } else {
+            return String(day[row])
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag == 1{
+            return yearField.text = String(year[row])
+        } else if pickerView.tag == 2{
+            return monthField.text = String(month[row])
+        } else {
+            return dayField.text = String(day[row])
+        }
+    }
+    
 }

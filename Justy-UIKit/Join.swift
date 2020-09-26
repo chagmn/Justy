@@ -45,14 +45,11 @@ class Join: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicke
         textbox_PW.delegate = self
         textbox_Name.delegate = self
         
-        //textbox_type.tintColor = .clear
         textbox_type.text = "변호사"
         createPickerView()
         dismissPickerView()
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-
     }
     
     let joinType = ["변호사", "일반 회원"]
