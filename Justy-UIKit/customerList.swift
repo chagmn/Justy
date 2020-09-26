@@ -60,8 +60,7 @@ class customerList: UIViewController{
     
     @objc func addCustomer(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddCustomer1"){
-            //controller.modalPresentationStyle = .currentContext
-            controller.modalTransitionStyle = .coverVertical
+            controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: true, completion: nil)
         }
     }

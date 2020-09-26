@@ -42,16 +42,16 @@ class AddCustomer1: UIViewController{
         nextBtn.layer.cornerRadius = 20
         nextBtn.clipsToBounds = true
         nextBtn.layer.borderColor = UIColor.clear.cgColor
-        nextBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        nextBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         nextBtn.addTarget(self, action: #selector(nextView), for: .touchUpInside)
         
     }
     @objc func nextView(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer2"){
-        controller.modalTransitionStyle = .coverVertical
+            controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
-            
         }
+        
     }
 }
