@@ -471,10 +471,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vJM-d0-DGf">
-                                <rect key="frame" x="127.5" y="20" width="120" height="120"/>
+                                <rect key="frame" x="147.5" y="50" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="DD4-9Y-OPY"/>
-                                    <constraint firstAttribute="height" constant="120" id="fvX-dU-yOi"/>
+                                    <constraint firstAttribute="width" constant="80" id="DD4-9Y-OPY"/>
+                                    <constraint firstAttribute="height" constant="80" id="fvX-dU-yOi"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="va1-PF-x3K">
@@ -599,7 +599,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vJM-d0-DGf" firstAttribute="centerX" secondItem="MwJ-c8-9Wn" secondAttribute="centerX" id="1oL-XT-mgw"/>
-                            <constraint firstItem="vJM-d0-DGf" firstAttribute="top" secondItem="faT-FZ-Jwr" secondAttribute="top" constant="20" id="EPe-9r-57p"/>
+                            <constraint firstItem="vJM-d0-DGf" firstAttribute="top" secondItem="faT-FZ-Jwr" secondAttribute="top" constant="50" id="EPe-9r-57p"/>
                         </constraints>
                     </view>
                     <connections>
@@ -648,13 +648,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyy-w6-rDK">
+                                <rect key="frame" x="164" y="218" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XzE-q4-xk5">
+                                <rect key="frame" x="139" y="295" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7u-i9-r3J">
+                                <rect key="frame" x="177" y="548" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6h6-T0-dUq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="img" destination="b7L-k8-K7A" id="OBV-Ic-4Op"/>
-                        <outlet property="text" destination="u9C-0g-U48" id="m9s-ew-OO3"/>
+                        <outlet property="micBtn" destination="jyy-w6-rDK" id="PHL-W8-ZUb"/>
+                        <outlet property="nextBtn" destination="p7u-i9-r3J" id="43g-2K-jDs"/>
+                        <outlet property="text1" destination="u9C-0g-U48" id="YVz-aD-7JI"/>
+                        <outlet property="textfield" destination="XzE-q4-xk5" id="fR5-Dt-h8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwp-K3-SCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
