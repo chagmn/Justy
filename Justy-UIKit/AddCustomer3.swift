@@ -38,9 +38,10 @@ class AddCustomer3: UIViewController{
         
         text.translatesAutoresizingMaskIntoConstraints = true
         text.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 5).isActive = true
+        text.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        text.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         text.widthAnchor.constraint(equalToConstant: 180).isActive = true
         text.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        text.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-       
+        
     }
 }
