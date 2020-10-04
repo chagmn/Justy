@@ -15,6 +15,7 @@
 		7614B1CF24EA88B5005359EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7614B1CE24EA88B5005359EF /* Assets.xcassets */; };
 		7614B1D224EA88B5005359EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7614B1D024EA88B5005359EF /* LaunchScreen.storyboard */; };
 		7614B1DA24EAE4B3005359EF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1D924EAE4B3005359EF /* Login.swift */; };
+		761993802529C8D6005310EC /* AddCustomer4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619937F2529C8D6005310EC /* AddCustomer4.swift */; };
 		76299F872518AD19004CEDD0 /* customerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76299F862518AD19004CEDD0 /* customerCell.xib */; };
 		76299F8A2518AE8B004CEDD0 /* customerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76299F892518AE8B004CEDD0 /* customerCell.swift */; };
 		7646CC5E251CBE3E00527C75 /* AddCustomer1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */; };
@@ -36,6 +37,7 @@
 		7614B1D124EA88B5005359EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7614B1D324EA88B5005359EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7614B1D924EAE4B3005359EF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		7619937F2529C8D6005310EC /* AddCustomer4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer4.swift; sourceTree = "<group>"; };
 		76299F862518AD19004CEDD0 /* customerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = customerCell.xib; sourceTree = "<group>"; };
 		76299F892518AE8B004CEDD0 /* customerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customerCell.swift; sourceTree = "<group>"; };
 		7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer1.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				7614B1C724EA88B3005359EF /* SceneDelegate.swift */,
 				7614B1C924EA88B3005359EF /* ViewController.swift */,
 				7614B1CB24EA88B3005359EF /* Main.storyboard */,
+				7619937F2529C8D6005310EC /* AddCustomer4.swift */,
 				76487EBF251F689800EC9442 /* AddCustomer3.swift */,
 				7608CB2A251CCDB700E449FA /* AddCustomer2.swift */,
 				7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */,
@@ -175,6 +178,7 @@
 				7697AB5524ED08A300B8407E /* Join.swift in Sources */,
 				7608CB2B251CCDB700E449FA /* AddCustomer2.swift in Sources */,
 				7614B1C624EA88B3005359EF /* AppDelegate.swift in Sources */,
+				761993802529C8D6005310EC /* AddCustomer4.swift in Sources */,
 				7614B1C824EA88B3005359EF /* SceneDelegate.swift in Sources */,
 				7614B1DA24EAE4B3005359EF /* Login.swift in Sources */,
 				7646CC5E251CBE3E00527C75 /* AddCustomer1.swift in Sources */,

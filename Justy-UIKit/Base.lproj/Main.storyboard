@@ -680,6 +680,21 @@
             </objects>
             <point key="canvasLocation" x="4216.8000000000002" y="520.38980509745136"/>
         </scene>
+        <!--Add Customer4-->
+        <scene sceneID="MQ9-ZA-VDS">
+            <objects>
+                <viewController storyboardIdentifier="AddCustomer4" id="2qr-VG-KAv" customClass="AddCustomer4" customModule="Justy_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HyR-PW-jyS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KPI-mY-FQL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f08-0I-Aos" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4886" y="521"/>
+        </scene>
         <!--Customer Info-->
         <scene sceneID="0x2-ls-n84">
             <objects>
