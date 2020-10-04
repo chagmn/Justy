@@ -31,7 +31,7 @@ class AddCustomerLast: UIViewController{
         
         text2.text = "기본적인 데이터 수집을 완료했습니다.\n참여해주셔서 감사합니다."
         text2.textColor = .black
-        text2.backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.8509803922, blue: 0.5490196078, alpha: 1)
+        text2.backgroundColor = #colorLiteral(red: 0.9999489188, green: 0.9309895635, blue: 0.6852593422, alpha: 1)
         text2.textAlignment = .center
         text2.numberOfLines = 0
         

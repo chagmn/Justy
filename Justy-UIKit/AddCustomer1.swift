@@ -9,7 +9,7 @@
 import UIKit
 
 class AddCustomer1: UIViewController{
-    let color = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+    let color = #colorLiteral(red: 0.9882352941, green: 0.9333333333, blue: 0.7137254902, alpha: 1)
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     @IBOutlet weak var icomImg: UIImageView!
     @IBOutlet weak var text1: UILabel!
