@@ -32,8 +32,8 @@ class AddCustomer3: UIViewController{
         micBtn.setImage(UIImage.init(systemName: "mic.fill"), for: .normal)
         micBtn.tintColor = .black
         micBtn.setTitle("", for: .normal)
-        micBtn.clipsToBounds = true
-        micBtn.contentMode = .scaleToFill
+        micBtn.contentVerticalAlignment = .fill
+        micBtn.contentHorizontalAlignment = .fill
         
         textfield.text = "내용을 입력해주세요."
         textfield.textAlignment = .left
@@ -75,8 +75,8 @@ class AddCustomer3: UIViewController{
         micBtn.translatesAutoresizingMaskIntoConstraints = false
         micBtn.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 15).isActive = true
         micBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        micBtn.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        micBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        micBtn.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        micBtn.heightAnchor.constraint(equalToConstant: 35).isActive = true
         
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.topAnchor.constraint(equalTo: micBtn.bottomAnchor, constant: 15).isActive = true
