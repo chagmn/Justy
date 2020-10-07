@@ -78,7 +78,10 @@ class AddCustomer4: UIViewController{
         
     }
     @objc func nextview(){
-        
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomerLast"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
     }
     
     func autoLayout(){
