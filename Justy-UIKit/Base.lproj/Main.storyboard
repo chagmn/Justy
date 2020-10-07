@@ -748,6 +748,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdM-Eb-gF6">
+                                <rect key="frame" x="164" y="553" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KPI-mY-FQL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -761,6 +766,7 @@
                         <outlet property="childInfo_txt1" destination="OBn-WP-wv4" id="mnU-Iw-Lj5"/>
                         <outlet property="img" destination="w3g-Zd-qIH" id="lwy-A0-qfS"/>
                         <outlet property="micBtn" destination="KYd-TO-ejf" id="wWu-Do-NQh"/>
+                        <outlet property="nextBtn" destination="OdM-Eb-gF6" id="sWz-dq-Kj6"/>
                         <outlet property="text1" destination="NRz-IK-tgI" id="mEV-dS-kRz"/>
                         <outlet property="textField_AttestedCopy" destination="TeV-m2-hZD" id="kWG-WM-3qQ"/>
                     </connections>
