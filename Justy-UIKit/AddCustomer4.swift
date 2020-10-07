@@ -23,6 +23,7 @@ class AddCustomer4: UIViewController{
     @IBOutlet weak var childInfo_boy_txt: UILabel!
     @IBOutlet weak var childInfo_girl: UITextField!
     @IBOutlet weak var childInfo_girl_txt: UILabel!
+    @IBOutlet weak var nextBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -64,6 +65,20 @@ class AddCustomer4: UIViewController{
         childInfo_girl_txt.text = "여"
         childInfo_girl_txt.textAlignment = .center
         childInfo_girl_txt.textColor = .black
+        
+        nextBtn.setTitle("next>", for: .normal)
+        nextBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
+        nextBtn.tintColor = .white
+        nextBtn.backgroundColor = mainColor
+        nextBtn.layer.borderWidth = 1
+        nextBtn.layer.cornerRadius = 20
+        nextBtn.clipsToBounds = true
+        nextBtn.layer.borderColor = UIColor.clear.cgColor
+        nextBtn.addTarget(self, action: #selector(nextview), for: .touchUpInside)
+        
+    }
+    @objc func nextview(){
+        
     }
     
     func autoLayout(){
@@ -99,5 +114,11 @@ class AddCustomer4: UIViewController{
         childInfo_txt1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50).isActive = true
         childInfo_txt1.widthAnchor.constraint(equalToConstant: 80).isActive = true
         childInfo_txt1.topAnchor.constraint(equalTo: textField_AttestedCopy.bottomAnchor, constant: 20).isActive = true
+        
+        nextBtn.translatesAutoresizingMaskIntoConstraints = false
+        nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nextBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        nextBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
