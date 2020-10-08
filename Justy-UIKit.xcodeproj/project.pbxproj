@@ -22,6 +22,7 @@
 		7646CC5E251CBE3E00527C75 /* AddCustomer1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */; };
 		76487EC0251F689800EC9442 /* AddCustomer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76487EBF251F689800EC9442 /* AddCustomer3.swift */; };
 		76755FB0251357A300C2AF6B /* customerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76755FAF251357A200C2AF6B /* customerList.swift */; };
+		76793A38252EA65500787EED /* AddCustomer5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76793A37252EA65500787EED /* AddCustomer5.swift */; };
 		768C5631250A3A020016AED6 /* myPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C5630250A3A020016AED6 /* myPage.swift */; };
 		7697AB5524ED08A300B8407E /* Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697AB5424ED08A300B8407E /* Join.swift */; };
 		76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A087762519EEDD00DFF5DA /* CustomerInfo.swift */; };
@@ -45,6 +46,7 @@
 		7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer1.swift; sourceTree = "<group>"; };
 		76487EBF251F689800EC9442 /* AddCustomer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer3.swift; sourceTree = "<group>"; };
 		76755FAF251357A200C2AF6B /* customerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customerList.swift; sourceTree = "<group>"; };
+		76793A37252EA65500787EED /* AddCustomer5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer5.swift; sourceTree = "<group>"; };
 		768C5630250A3A020016AED6 /* myPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPage.swift; sourceTree = "<group>"; };
 		7697AB5424ED08A300B8407E /* Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Join.swift; sourceTree = "<group>"; };
 		76A087762519EEDD00DFF5DA /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				7614B1C524EA88B3005359EF /* AppDelegate.swift */,
 				7614B1C724EA88B3005359EF /* SceneDelegate.swift */,
+				76793A37252EA65500787EED /* AddCustomer5.swift */,
 				7614B1C924EA88B3005359EF /* ViewController.swift */,
 				7614B1CB24EA88B3005359EF /* Main.storyboard */,
 				7619937F2529C8D6005310EC /* AddCustomer4.swift */,
@@ -94,6 +97,7 @@
 				761993822529C9D2005310EC /* AddCustomerLast.swift */,
 				7614B1D324EA88B5005359EF /* Info.plist */,
 				7614B1D924EAE4B3005359EF /* Login.swift */,
+				76793A36252EA64700787EED /* New Group */,
 				7697AB5424ED08A300B8407E /* Join.swift */,
 				768C5630250A3A020016AED6 /* myPage.swift */,
 				76755FAF251357A200C2AF6B /* customerList.swift */,
@@ -101,6 +105,13 @@
 				76299F892518AE8B004CEDD0 /* customerCell.swift */,
 			);
 			path = "Justy-UIKit";
+			sourceTree = "<group>";
+		};
+		76793A36252EA64700787EED /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			files = (
 				768C5631250A3A020016AED6 /* myPage.swift in Sources */,
 				76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */,
+				76793A38252EA65500787EED /* AddCustomer5.swift in Sources */,
 				7614B1CA24EA88B3005359EF /* ViewController.swift in Sources */,
 				761993832529C9D2005310EC /* AddCustomerLast.swift in Sources */,
 				7697AB5524ED08A300B8407E /* Join.swift in Sources */,

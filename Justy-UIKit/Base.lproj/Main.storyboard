@@ -775,6 +775,21 @@
             </objects>
             <point key="canvasLocation" x="4885.6000000000004" y="520.38980509745136"/>
         </scene>
+        <!--Add Customer5-->
+        <scene sceneID="r7d-no-NCa">
+            <objects>
+                <viewController storyboardIdentifier="AddCustomer5" id="RxO-Wj-63T" customClass="AddCustomer5" customModule="Justy_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nRB-qu-cPH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eUK-Dq-qVn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bop-WS-9TI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5532" y="521"/>
+        </scene>
         <!--Add Customer Last-->
         <scene sceneID="oVN-ip-3xD">
             <objects>
