@@ -30,7 +30,7 @@ class AddCustomer4: UIViewController{
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         autoLayout()
-        print(screenWidth)
+       
         img.image = UIImage(systemName: "questionmark.circle.fill")
         img.tintColor = mainColor
         
