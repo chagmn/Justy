@@ -33,5 +33,8 @@ class AddCustomer5: UIViewController{
         img.widthAnchor.constraint(equalToConstant: 80).isActive = true
         img.heightAnchor.constraint(equalTo: img.widthAnchor).isActive = true
         
+        text1.translatesAutoresizingMaskIntoConstraints = false
+        
+        
     }
 }
