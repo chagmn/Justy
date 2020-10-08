@@ -24,7 +24,10 @@ class AddCustomer5: UIViewController{
     
     func autoLayout(){
         img.translatesAutoresizingMaskIntoConstraints = false
+        img.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
         img.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        img.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        img.heightAnchor.constraint(equalTo: img.widthAnchor).isActive = true
         
     }
 }
