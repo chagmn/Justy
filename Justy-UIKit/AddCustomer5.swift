@@ -12,6 +12,7 @@ class AddCustomer5: UIViewController{
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     
     @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var text1: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class AddCustomer5: UIViewController{
         
         img.image = UIImage(systemName: "questionmark.circle.fill")
         img.tintColor = mainColor
+        
+        text1.text = "Test"
+        text1.textColor = .black
     }
     
     func autoLayout(){
