@@ -97,7 +97,6 @@
 				761993822529C9D2005310EC /* AddCustomerLast.swift */,
 				7614B1D324EA88B5005359EF /* Info.plist */,
 				7614B1D924EAE4B3005359EF /* Login.swift */,
-				76793A36252EA64700787EED /* New Group */,
 				7697AB5424ED08A300B8407E /* Join.swift */,
 				768C5630250A3A020016AED6 /* myPage.swift */,
 				76755FAF251357A200C2AF6B /* customerList.swift */,
@@ -105,13 +104,6 @@
 				76299F892518AE8B004CEDD0 /* customerCell.swift */,
 			);
 			path = "Justy-UIKit";
-			sourceTree = "<group>";
-		};
-		76793A36252EA64700787EED /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
