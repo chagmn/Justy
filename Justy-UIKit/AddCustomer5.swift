@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 필요 서류 등록
 class AddCustomer5: UIViewController{
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     
@@ -22,8 +23,10 @@ class AddCustomer5: UIViewController{
         img.image = UIImage(systemName: "questionmark.circle.fill")
         img.tintColor = mainColor
         
-        text1.text = "Test"
+        text1.text = "필요한 서류를 등록해 주세요."
+        text1.textAlignment = .center
         text1.textColor = .black
+        text1.font = UIFont.boldSystemFont(ofSize: 22)
     }
     
     func autoLayout(){
@@ -36,5 +39,6 @@ class AddCustomer5: UIViewController{
         text1.translatesAutoresizingMaskIntoConstraints = false
         text1.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 5).isActive = true
         text1.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        text1.widthAnchor.constraint(equalToConstant: 300).isActive = true
     }
 }

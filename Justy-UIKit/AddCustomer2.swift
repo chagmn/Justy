@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 고객 기본 정보
 class AddCustomer2: UIViewController{
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     let year: [Int] = Array(1950...2020)
@@ -63,9 +64,11 @@ class AddCustomer2: UIViewController{
         
         nameField.delegate = self
         nameField.tag = 1
+       
         
         phoneField.delegate = self
         phoneField.tag = 2
+        phoneField.keyboardType = .numberPad
         
         checkBox1.image = UIImage(systemName: "square")
         checkBox1.isUserInteractionEnabled = true
@@ -87,10 +90,15 @@ class AddCustomer2: UIViewController{
         
         yearField.delegate = self
         yearField.textAlignment = .center
+        yearField.insertText(String(1950))
+        
         monthField.delegate = self
         monthField.textAlignment = .center
+        monthField.insertText(String(1))
+        
         dayField.delegate = self
         dayField.textAlignment = .center
+        dayField.insertText(String(1))
         
         
         text2.text = "초혼"

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 가족 관계 확인
 class AddCustomer4: UIViewController{
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     let screenWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -56,7 +57,6 @@ class AddCustomer4: UIViewController{
         childInfo_txt1.text = "자식 정보 :"
         childInfo_txt1.textAlignment = .center
         childInfo_txt1.textColor = .black
-        childInfo_txt1.backgroundColor = .yellow
         
         childInfo_boy_txt.text = "남"
         childInfo_boy_txt.textAlignment = .center
@@ -114,9 +114,27 @@ class AddCustomer4: UIViewController{
         Btn_AttestedCopy.heightAnchor.constraint(equalTo: Btn_AttestedCopy.widthAnchor).isActive = true
         
         childInfo_txt1.translatesAutoresizingMaskIntoConstraints = false
-        childInfo_txt1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50).isActive = true
+        childInfo_txt1.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -40).isActive = true
         childInfo_txt1.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        childInfo_txt1.topAnchor.constraint(equalTo: textField_AttestedCopy.bottomAnchor, constant: 20).isActive = true
+        childInfo_txt1.topAnchor.constraint(equalTo: textField_AttestedCopy.bottomAnchor, constant: 25).isActive = true
+        
+        childInfo_boy.translatesAutoresizingMaskIntoConstraints = false
+        childInfo_boy.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
+        childInfo_boy.leadingAnchor.constraint(equalTo: childInfo_txt1.trailingAnchor, constant: 15).isActive = true
+        childInfo_boy.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        childInfo_boy_txt.translatesAutoresizingMaskIntoConstraints = false
+        childInfo_boy_txt.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
+        childInfo_boy_txt.leadingAnchor.constraint(equalTo:childInfo_boy.trailingAnchor, constant: 5).isActive = true
+        
+        childInfo_girl.translatesAutoresizingMaskIntoConstraints = false
+        childInfo_girl.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
+        childInfo_girl.leadingAnchor.constraint(equalTo: childInfo_boy_txt.trailingAnchor, constant: 15).isActive = true
+        childInfo_girl.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        childInfo_girl_txt.translatesAutoresizingMaskIntoConstraints = false
+        childInfo_girl_txt.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
+        childInfo_girl_txt.leadingAnchor.constraint(equalTo:childInfo_girl.trailingAnchor, constant: 5).isActive = true
         
         nextBtn.translatesAutoresizingMaskIntoConstraints = false
         nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
