@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2qr-VG-KAv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RxO-Wj-63T">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -807,6 +807,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="addBtn1" destination="vQG-PG-7LJ" id="Prm-c0-SBF"/>
+                        <outlet property="field1" destination="uit-OG-VlG" id="5PT-L8-5q5"/>
                         <outlet property="img" destination="zMk-eY-iLa" id="3xo-ve-L3F"/>
                         <outlet property="text1" destination="EDG-dw-KLF" id="kk0-ak-Hkb"/>
                     </connections>
