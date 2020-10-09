@@ -15,6 +15,9 @@ class AddCustomer5: UIViewController{
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var text1: UILabel!
     
+    @IBOutlet weak var field1: UITextField!
+    @IBOutlet weak var addBtn1: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
@@ -27,6 +30,8 @@ class AddCustomer5: UIViewController{
         text1.textAlignment = .center
         text1.textColor = .black
         text1.font = UIFont.boldSystemFont(ofSize: 22)
+        
+        field1.placeholder = "ff"
     }
     
     func autoLayout(){
@@ -40,5 +45,10 @@ class AddCustomer5: UIViewController{
         text1.topAnchor.constraint(equalTo: img.bottomAnchor, constant: 5).isActive = true
         text1.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         text1.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        
+        field1.translatesAutoresizingMaskIntoConstraints = false
+        field1.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 20).isActive = true
+        field1.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20).isActive = true
+        field1.widthAnchor.constraint(equalToConstant: 150).isActive = true
     }
 }
