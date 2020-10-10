@@ -8,7 +8,7 @@
 
 import UIKit
 
-// 가족 관계 확인
+// 가족 관계 확인 
 class AddCustomer4: UIViewController{
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     let screenWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -25,6 +25,10 @@ class AddCustomer4: UIViewController{
     @IBOutlet weak var childInfo_girl: UITextField!
     @IBOutlet weak var childInfo_girl_txt: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var evi2Field: UITextField!
+    @IBOutlet weak var evi2Btn: UIButton!
+    @IBOutlet weak var evi3Field: UITextField!
+    @IBOutlet weak var evi3Btn: UIButton!
     
     
     override func viewDidLoad() {
@@ -43,8 +47,8 @@ class AddCustomer4: UIViewController{
         
         
         textField_AttestedCopy.isEnabled = false
-        textField_AttestedCopy.insertText("등본 업로드")
-        textField_AttestedCopy.textColor = .lightGray
+        textField_AttestedCopy.placeholder = "등본 업로드"
+        textField_AttestedCopy.textAlignment = .center
         
         Btn_AttestedCopy.setTitle("", for: .normal)
         Btn_AttestedCopy.setImage(UIImage(systemName: "tray.and.arrow.up.fill"), for: .normal)
@@ -52,6 +56,17 @@ class AddCustomer4: UIViewController{
         Btn_AttestedCopy.contentVerticalAlignment = .fill
         Btn_AttestedCopy.contentHorizontalAlignment = .fill
         Btn_AttestedCopy.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
+        
+        evi2Field.isEnabled = false
+        evi2Field.placeholder = "가족관계증명서 업로드"
+        evi2Field.textAlignment = .center
+        
+        evi2Btn.setTitle("", for: .normal)
+        evi2Btn.setImage(UIImage(systemName: "tray.and.arrow.up.fill"), for: .normal)
+        evi2Btn.tintColor = .black
+        evi2Btn.contentVerticalAlignment = .fill
+        evi2Btn.contentHorizontalAlignment = .fill
+        evi2Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -78,6 +93,17 @@ class AddCustomer4: UIViewController{
         childInfo_girl_txt.text = "여"
         childInfo_girl_txt.textAlignment = .center
         childInfo_girl_txt.textColor = .black
+        
+        evi3Field.isEnabled = false
+        evi3Field.placeholder = "가족관계증명서 업로드"
+        evi3Field.textAlignment = .center
+        
+        evi3Btn.setTitle("", for: .normal)
+        evi3Btn.setImage(UIImage(systemName: "tray.and.arrow.up.fill"), for: .normal)
+        evi3Btn.tintColor = .black
+        evi3Btn.contentVerticalAlignment = .fill
+        evi3Btn.contentHorizontalAlignment = .fill
+        evi3Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         nextBtn.setTitle("next>", for: .normal)
         nextBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
@@ -153,6 +179,13 @@ class AddCustomer4: UIViewController{
         Btn_AttestedCopy.centerYAnchor.constraint(equalTo: textField_AttestedCopy.centerYAnchor).isActive = true
         Btn_AttestedCopy.widthAnchor.constraint(equalToConstant: 25).isActive = true
         Btn_AttestedCopy.heightAnchor.constraint(equalTo: Btn_AttestedCopy.widthAnchor).isActive = true
+        
+        evi2Field.translatesAutoresizingMaskIntoConstraints = false
+        evi2Field.topAnchor.constraint(equalTo: textField_AttestedCopy.bottomAnchor, constant: 10).isActive = true
+        evi2Field.rightAnchor.constraint(equalTo: textField_AttestedCopy.trailingAnchor).isActive = true
+        
+        
+        evi2Btn.translatesAutoresizingMaskIntoConstraints = false
         
         childInfo_txt1.translatesAutoresizingMaskIntoConstraints = false
         childInfo_txt1.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -40).isActive = true
