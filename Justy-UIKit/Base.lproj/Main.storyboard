@@ -802,6 +802,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inC-hg-J8H">
+                                <rect key="frame" x="166" y="568" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eUK-Dq-qVn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -810,6 +815,7 @@
                         <outlet property="addBtn1" destination="vQG-PG-7LJ" id="Prm-c0-SBF"/>
                         <outlet property="field1" destination="uit-OG-VlG" id="5PT-L8-5q5"/>
                         <outlet property="img" destination="zMk-eY-iLa" id="3xo-ve-L3F"/>
+                        <outlet property="nextBtn" destination="inC-hg-J8H" id="x4Q-El-2xZ"/>
                         <outlet property="text1" destination="EDG-dw-KLF" id="kk0-ak-Hkb"/>
                     </connections>
                 </viewController>
