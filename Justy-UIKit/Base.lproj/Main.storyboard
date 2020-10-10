@@ -773,6 +773,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TgV-bE-bMW">
+                                <rect key="frame" x="96" y="533" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bew-dQ-L23">
+                                <rect key="frame" x="232" y="535" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KPI-mY-FQL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -788,6 +799,8 @@
                         <outlet property="evi2Field" destination="dfG-V8-mK3" id="nHh-RY-5sh"/>
                         <outlet property="evi3Btn" destination="cy9-aE-Yg7" id="YWg-0R-biv"/>
                         <outlet property="evi3Field" destination="jPp-aY-e9A" id="vSX-7K-s0s"/>
+                        <outlet property="evi4Btn" destination="bew-dQ-L23" id="8zb-aj-wDQ"/>
+                        <outlet property="evi4Field" destination="TgV-bE-bMW" id="OIB-6z-cI9"/>
                         <outlet property="img" destination="w3g-Zd-qIH" id="lwy-A0-qfS"/>
                         <outlet property="nextBtn" destination="OdM-Eb-gF6" id="sWz-dq-Kj6"/>
                         <outlet property="text1" destination="NRz-IK-tgI" id="mEV-dS-kRz"/>

@@ -29,6 +29,8 @@ class AddCustomer4: UIViewController{
     @IBOutlet weak var evi2Btn: UIButton!
     @IBOutlet weak var evi3Field: UITextField!
     @IBOutlet weak var evi3Btn: UIButton!
+    @IBOutlet weak var evi4Field: UITextField!
+    @IBOutlet weak var evi4Btn: UIButton!
     
     
     override func viewDidLoad() {
@@ -95,7 +97,7 @@ class AddCustomer4: UIViewController{
         childInfo_girl_txt.textColor = .black
         
         evi3Field.isEnabled = false
-        evi3Field.placeholder = "가족관계증명서 업로드"
+        evi3Field.placeholder = "양육,친권자 협의서 업로드"
         evi3Field.textAlignment = .center
         
         evi3Btn.setTitle("", for: .normal)
@@ -104,6 +106,17 @@ class AddCustomer4: UIViewController{
         evi3Btn.contentVerticalAlignment = .fill
         evi3Btn.contentHorizontalAlignment = .fill
         evi3Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
+        
+        evi4Field.isEnabled = false
+        evi4Field.placeholder = "가정법원 심판정본 업로드"
+        evi4Field.textAlignment = .center
+        
+        evi4Btn.setTitle("", for: .normal)
+        evi4Btn.setImage(UIImage(systemName: "tray.and.arrow.up.fill"), for: .normal)
+        evi4Btn.tintColor = .black
+        evi4Btn.contentVerticalAlignment = .fill
+        evi4Btn.contentHorizontalAlignment = .fill
+        evi4Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         nextBtn.setTitle("next>", for: .normal)
         nextBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
@@ -170,27 +183,31 @@ class AddCustomer4: UIViewController{
         
         
         textField_AttestedCopy.translatesAutoresizingMaskIntoConstraints = false
-        textField_AttestedCopy.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 150).isActive = true
-        textField_AttestedCopy.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
-        textField_AttestedCopy.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        textField_AttestedCopy.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 100).isActive = true
+        textField_AttestedCopy.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 80).isActive = true
+        textField_AttestedCopy.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
         Btn_AttestedCopy.translatesAutoresizingMaskIntoConstraints = false
-        Btn_AttestedCopy.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 70).isActive = true
+        Btn_AttestedCopy.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 100).isActive = true
         Btn_AttestedCopy.centerYAnchor.constraint(equalTo: textField_AttestedCopy.centerYAnchor).isActive = true
         Btn_AttestedCopy.widthAnchor.constraint(equalToConstant: 25).isActive = true
         Btn_AttestedCopy.heightAnchor.constraint(equalTo: Btn_AttestedCopy.widthAnchor).isActive = true
         
         evi2Field.translatesAutoresizingMaskIntoConstraints = false
         evi2Field.topAnchor.constraint(equalTo: textField_AttestedCopy.bottomAnchor, constant: 10).isActive = true
-        evi2Field.rightAnchor.constraint(equalTo: textField_AttestedCopy.trailingAnchor).isActive = true
-        
+        evi2Field.trailingAnchor.constraint(equalTo: textField_AttestedCopy.trailingAnchor).isActive = true
+        evi2Field.widthAnchor.constraint(equalTo: textField_AttestedCopy.widthAnchor).isActive = true
         
         evi2Btn.translatesAutoresizingMaskIntoConstraints = false
+        evi2Btn.leadingAnchor.constraint(equalTo: Btn_AttestedCopy.leadingAnchor).isActive = true
+        evi2Btn.centerYAnchor.constraint(equalTo: evi2Field.centerYAnchor).isActive = true
+        evi2Btn.widthAnchor.constraint(equalTo: Btn_AttestedCopy.widthAnchor).isActive = true
+        evi2Btn.heightAnchor.constraint(equalTo: evi2Btn.widthAnchor).isActive = true
         
         childInfo_txt1.translatesAutoresizingMaskIntoConstraints = false
         childInfo_txt1.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -40).isActive = true
         childInfo_txt1.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        childInfo_txt1.topAnchor.constraint(equalTo: textField_AttestedCopy.bottomAnchor, constant: 25).isActive = true
+        childInfo_txt1.topAnchor.constraint(equalTo: evi2Field.bottomAnchor, constant: 30).isActive = true
         
         childInfo_boy.translatesAutoresizingMaskIntoConstraints = false
         childInfo_boy.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
@@ -209,6 +226,28 @@ class AddCustomer4: UIViewController{
         childInfo_girl_txt.translatesAutoresizingMaskIntoConstraints = false
         childInfo_girl_txt.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
         childInfo_girl_txt.leadingAnchor.constraint(equalTo:childInfo_girl.trailingAnchor, constant: 5).isActive = true
+        
+        evi3Field.translatesAutoresizingMaskIntoConstraints = false
+        evi3Field.topAnchor.constraint(equalTo: childInfo_txt1.bottomAnchor, constant: 30).isActive = true
+        evi3Field.trailingAnchor.constraint(equalTo: textField_AttestedCopy.trailingAnchor).isActive = true
+        evi3Field.widthAnchor.constraint(equalTo: textField_AttestedCopy.widthAnchor).isActive = true
+        
+        evi3Btn.translatesAutoresizingMaskIntoConstraints = false
+        evi3Btn.leadingAnchor.constraint(equalTo: Btn_AttestedCopy.leadingAnchor).isActive = true
+        evi3Btn.centerYAnchor.constraint(equalTo: evi3Field.centerYAnchor).isActive = true
+        evi3Btn.widthAnchor.constraint(equalTo: Btn_AttestedCopy.widthAnchor).isActive = true
+        evi3Btn.heightAnchor.constraint(equalTo: evi3Btn.widthAnchor).isActive = true
+        
+        evi4Field.translatesAutoresizingMaskIntoConstraints = false
+        evi4Field.topAnchor.constraint(equalTo: evi3Field.bottomAnchor, constant: 10).isActive = true
+        evi4Field.trailingAnchor.constraint(equalTo: textField_AttestedCopy.trailingAnchor).isActive = true
+        evi4Field.widthAnchor.constraint(equalTo: textField_AttestedCopy.widthAnchor).isActive = true
+        
+        evi4Btn.translatesAutoresizingMaskIntoConstraints = false
+        evi4Btn.leadingAnchor.constraint(equalTo: Btn_AttestedCopy.leadingAnchor).isActive = true
+        evi4Btn.centerYAnchor.constraint(equalTo: evi4Field.centerYAnchor).isActive = true
+        evi4Btn.widthAnchor.constraint(equalTo: Btn_AttestedCopy.widthAnchor).isActive = true
+        evi4Btn.heightAnchor.constraint(equalTo: evi4Btn.widthAnchor).isActive = true
         
         nextBtn.translatesAutoresizingMaskIntoConstraints = false
         nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
