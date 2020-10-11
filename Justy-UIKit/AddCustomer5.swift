@@ -50,7 +50,7 @@ class AddCustomer5: UIViewController{
         addBtn1.contentHorizontalAlignment = .fill
         addBtn1.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
-        field2.placeholder = "진단서 등록"
+        field2.placeholder = "진술서 등록"
         field2.textAlignment = .center
         
         addBtn2.setTitle("", for: .normal)
@@ -60,7 +60,7 @@ class AddCustomer5: UIViewController{
         addBtn2.contentHorizontalAlignment = .fill
         addBtn2.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
-        field3.placeholder = "진단서 등록"
+        field3.placeholder = "재외국민등록등본"
         field3.textAlignment = .center
         
         addBtn3.setTitle("", for: .normal)
@@ -70,7 +70,7 @@ class AddCustomer5: UIViewController{
         addBtn3.contentHorizontalAlignment = .fill
         addBtn3.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
-        field4.placeholder = "진단서 등록"
+        field4.placeholder = "재감인 증명서"
         field4.textAlignment = .center
         
         addBtn4.setTitle("", for: .normal)
