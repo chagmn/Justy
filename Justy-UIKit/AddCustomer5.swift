@@ -103,12 +103,12 @@ class AddCustomer5: UIViewController{
         
         field1.translatesAutoresizingMaskIntoConstraints = false
         field1.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 25).isActive = true
-        field1.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
+        field1.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
         field1.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
         addBtn1.translatesAutoresizingMaskIntoConstraints = false
         addBtn1.centerYAnchor.constraint(equalTo: field1.centerYAnchor).isActive = true
-        addBtn1.leftAnchor.constraint(equalTo: field1.rightAnchor, constant: 15).isActive = true
+        addBtn1.leadingAnchor.constraint(equalTo: field1.trailingAnchor, constant: 15).isActive = true
         addBtn1.widthAnchor.constraint(equalToConstant: 25).isActive = true
         addBtn1.heightAnchor.constraint(equalTo: addBtn1.widthAnchor).isActive = true
         
