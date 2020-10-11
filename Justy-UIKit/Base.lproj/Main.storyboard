@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2qr-VG-KAv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3av-yL-42F">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -432,11 +432,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOP-ma-Zq1">
-                                <rect key="frame" x="214.5" y="454" width="46" height="30"/>
+                                <rect key="frame" x="234.5" y="454" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03O-ja-wuE">
-                                <rect key="frame" x="114.5" y="454" width="46" height="30"/>
+                                <rect key="frame" x="94.5" y="454" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
@@ -449,15 +449,18 @@
                             <constraint firstItem="ttU-Pj-XBD" firstAttribute="top" secondItem="maU-fz-zY5" secondAttribute="bottom" constant="5" id="BKG-UZ-cKF"/>
                             <constraint firstItem="lhs-mL-hFd" firstAttribute="trailing" secondItem="Nwk-oI-QS3" secondAttribute="trailing" constant="65" id="BpJ-Vh-3WC"/>
                             <constraint firstItem="03O-ja-wuE" firstAttribute="top" secondItem="gOP-ma-Zq1" secondAttribute="top" id="ER4-TC-zbR"/>
-                            <constraint firstItem="gOP-ma-Zq1" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" constant="50" id="ExQ-G1-bUJ"/>
+                            <constraint firstItem="gOP-ma-Zq1" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" constant="70" id="ExQ-G1-bUJ"/>
+                            <constraint firstItem="03O-ja-wuE" firstAttribute="height" secondItem="gOP-ma-Zq1" secondAttribute="height" id="PgC-8K-vaa"/>
                             <constraint firstItem="maU-fz-zY5" firstAttribute="top" secondItem="lhs-mL-hFd" secondAttribute="top" constant="160" id="Yh0-91-QjN"/>
-                            <constraint firstItem="03O-ja-wuE" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" constant="-50" id="cPE-Qy-YFd"/>
+                            <constraint firstItem="03O-ja-wuE" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" constant="-70" id="cPE-Qy-YFd"/>
+                            <constraint firstItem="03O-ja-wuE" firstAttribute="width" secondItem="gOP-ma-Zq1" secondAttribute="width" id="dlJ-gJ-sip"/>
                             <constraint firstItem="maU-fz-zY5" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" id="l1i-wo-KeF"/>
                             <constraint firstItem="Nwk-oI-QS3" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" id="nRV-Om-DXJ"/>
                             <constraint firstItem="ttU-Pj-XBD" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" id="z0J-wO-mDA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="03O-ja-wuE" id="cKY-KF-WXJ"/>
                         <outlet property="icomImg" destination="maU-fz-zY5" id="YkL-QC-RIe"/>
                         <outlet property="nextBtn" destination="gOP-ma-Zq1" id="nS1-rF-Cw6"/>
                         <outlet property="text1" destination="ttU-Pj-XBD" id="Fab-FF-N2q"/>

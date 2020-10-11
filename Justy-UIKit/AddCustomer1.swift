@@ -15,6 +15,7 @@ class AddCustomer1: UIViewController{
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var text2: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,23 @@ class AddCustomer1: UIViewController{
         nextBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         nextBtn.addTarget(self, action: #selector(nextView), for: .touchUpInside)
+        
+        backBtn.setTitle("<back", for: .normal)
+        backBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
+        backBtn.tintColor = .white
+        backBtn.backgroundColor = mainColor
+        backBtn.layer.borderWidth = 1
+        backBtn.layer.cornerRadius = 20
+        backBtn.clipsToBounds = true
+        backBtn.layer.borderColor = UIColor.clear.cgColor
+        backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
+    }
+    
+    @objc func backView(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "customerListView"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
         
     }
     @objc func nextView(){
