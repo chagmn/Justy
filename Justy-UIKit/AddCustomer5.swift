@@ -18,6 +18,13 @@ class AddCustomer5: UIViewController{
     @IBOutlet weak var field1: UITextField!
     @IBOutlet weak var addBtn1: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var field2: UITextField!
+    @IBOutlet weak var addBtn2: UIButton!
+    @IBOutlet weak var field3: UITextField!
+    @IBOutlet weak var addBtn3: UIButton!
+    @IBOutlet weak var field4: UITextField!
+    @IBOutlet weak var addBtn4: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +48,36 @@ class AddCustomer5: UIViewController{
         addBtn1.contentVerticalAlignment = .fill
         addBtn1.contentHorizontalAlignment = .fill
         addBtn1.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
+        
+        field2.placeholder = "진단서 등록"
+        field2.textAlignment = .center
+        
+        addBtn2.setTitle("", for: .normal)
+        addBtn2.setImage(UIImage(systemName: "tray.and.arrow.up.fill"), for: .normal)
+        addBtn2.tintColor = .black
+        addBtn2.contentVerticalAlignment = .fill
+        addBtn2.contentHorizontalAlignment = .fill
+        addBtn2.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
+        
+        field3.placeholder = "진단서 등록"
+        field3.textAlignment = .center
+        
+        addBtn3.setTitle("", for: .normal)
+        addBtn3.setImage(UIImage(systemName: "tray.and.arrow.up.fill"), for: .normal)
+        addBtn3.tintColor = .black
+        addBtn3.contentVerticalAlignment = .fill
+        addBtn3.contentHorizontalAlignment = .fill
+        addBtn3.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
+        
+        field4.placeholder = "진단서 등록"
+        field4.textAlignment = .center
+        
+        addBtn4.setTitle("", for: .normal)
+        addBtn4.setImage(UIImage(systemName: "tray.and.arrow.up.fill"), for: .normal)
+        addBtn4.tintColor = .black
+        addBtn4.contentVerticalAlignment = .fill
+        addBtn4.contentHorizontalAlignment = .fill
+        addBtn4.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         
         nextBtn.setTitle("next>", for: .normal)
@@ -102,7 +139,7 @@ class AddCustomer5: UIViewController{
         text1.widthAnchor.constraint(equalToConstant: 300).isActive = true
         
         field1.translatesAutoresizingMaskIntoConstraints = false
-        field1.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 25).isActive = true
+        field1.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 100).isActive = true
         field1.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
         field1.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
@@ -117,6 +154,39 @@ class AddCustomer5: UIViewController{
         nextBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
         nextBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        field2.translatesAutoresizingMaskIntoConstraints = false
+        field2.topAnchor.constraint(equalTo: field1.bottomAnchor, constant: 25).isActive = true
+        field2.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
+        field2.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        addBtn2.translatesAutoresizingMaskIntoConstraints = false
+        addBtn2.centerYAnchor.constraint(equalTo: field2.centerYAnchor).isActive = true
+        addBtn2.leadingAnchor.constraint(equalTo: field2.trailingAnchor, constant: 15).isActive = true
+        addBtn2.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        addBtn2.heightAnchor.constraint(equalTo: addBtn2.widthAnchor).isActive = true
+        
+        field3.translatesAutoresizingMaskIntoConstraints = false
+        field3.topAnchor.constraint(equalTo: field2.bottomAnchor, constant: 25).isActive = true
+        field3.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
+        field3.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        addBtn3.translatesAutoresizingMaskIntoConstraints = false
+        addBtn3.centerYAnchor.constraint(equalTo: field3.centerYAnchor).isActive = true
+        addBtn3.leadingAnchor.constraint(equalTo: field3.trailingAnchor, constant: 15).isActive = true
+        addBtn3.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        addBtn3.heightAnchor.constraint(equalTo: addBtn3.widthAnchor).isActive = true
+        
+        field4.translatesAutoresizingMaskIntoConstraints = false
+        field4.topAnchor.constraint(equalTo: field3.bottomAnchor, constant: 25).isActive = true
+        field4.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 50).isActive = true
+        field4.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        addBtn4.translatesAutoresizingMaskIntoConstraints = false
+        addBtn4.centerYAnchor.constraint(equalTo: field4.centerYAnchor).isActive = true
+        addBtn4.leadingAnchor.constraint(equalTo: field4.trailingAnchor, constant: 15).isActive = true
+        addBtn4.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        addBtn4.heightAnchor.constraint(equalTo: addBtn4.widthAnchor).isActive = true
     }
 }
 extension AddCustomer5: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

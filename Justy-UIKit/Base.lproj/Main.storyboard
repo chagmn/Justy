@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RxO-Wj-63T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2qr-VG-KAv">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -432,7 +432,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOP-ma-Zq1">
-                                <rect key="frame" x="164.5" y="454" width="46" height="30"/>
+                                <rect key="frame" x="214.5" y="454" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03O-ja-wuE">
+                                <rect key="frame" x="114.5" y="454" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
@@ -444,8 +448,10 @@
                             <constraint firstItem="gOP-ma-Zq1" firstAttribute="top" secondItem="Nwk-oI-QS3" secondAttribute="bottom" constant="80" id="8t3-n5-9FM"/>
                             <constraint firstItem="ttU-Pj-XBD" firstAttribute="top" secondItem="maU-fz-zY5" secondAttribute="bottom" constant="5" id="BKG-UZ-cKF"/>
                             <constraint firstItem="lhs-mL-hFd" firstAttribute="trailing" secondItem="Nwk-oI-QS3" secondAttribute="trailing" constant="65" id="BpJ-Vh-3WC"/>
-                            <constraint firstItem="gOP-ma-Zq1" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" id="ExQ-G1-bUJ"/>
+                            <constraint firstItem="03O-ja-wuE" firstAttribute="top" secondItem="gOP-ma-Zq1" secondAttribute="top" id="ER4-TC-zbR"/>
+                            <constraint firstItem="gOP-ma-Zq1" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" constant="50" id="ExQ-G1-bUJ"/>
                             <constraint firstItem="maU-fz-zY5" firstAttribute="top" secondItem="lhs-mL-hFd" secondAttribute="top" constant="160" id="Yh0-91-QjN"/>
+                            <constraint firstItem="03O-ja-wuE" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" constant="-50" id="cPE-Qy-YFd"/>
                             <constraint firstItem="maU-fz-zY5" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" id="l1i-wo-KeF"/>
                             <constraint firstItem="Nwk-oI-QS3" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" id="nRV-Om-DXJ"/>
                             <constraint firstItem="ttU-Pj-XBD" firstAttribute="centerX" secondItem="5xz-1u-x6P" secondAttribute="centerX" id="z0J-wO-mDA"/>
@@ -846,13 +852,52 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="leG-t8-3AY">
+                                <rect key="frame" x="95" y="272" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlM-FX-kBM">
+                                <rect key="frame" x="232" y="274" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pP-VX-yyM">
+                                <rect key="frame" x="98" y="316" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4h6-fU-tiY">
+                                <rect key="frame" x="235" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thE-OU-tQE">
+                                <rect key="frame" x="98" y="358" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daS-28-PeQ">
+                                <rect key="frame" x="234" y="360" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eUK-Dq-qVn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="addBtn1" destination="vQG-PG-7LJ" id="Prm-c0-SBF"/>
+                        <outlet property="addBtn1" destination="vQG-PG-7LJ" id="ref-RZ-equ"/>
+                        <outlet property="addBtn2" destination="YlM-FX-kBM" id="4ZI-ke-jf5"/>
+                        <outlet property="addBtn3" destination="4h6-fU-tiY" id="LBt-Yj-shP"/>
+                        <outlet property="addBtn4" destination="daS-28-PeQ" id="Ux2-Dz-XAq"/>
                         <outlet property="field1" destination="uit-OG-VlG" id="5PT-L8-5q5"/>
+                        <outlet property="field2" destination="leG-t8-3AY" id="Zfo-0q-ZfS"/>
+                        <outlet property="field3" destination="7pP-VX-yyM" id="d0f-UO-TOz"/>
+                        <outlet property="field4" destination="thE-OU-tQE" id="mlu-bR-4s6"/>
                         <outlet property="img" destination="zMk-eY-iLa" id="3xo-ve-L3F"/>
                         <outlet property="nextBtn" destination="inC-hg-J8H" id="x4Q-El-2xZ"/>
                         <outlet property="text1" destination="EDG-dw-KLF" id="kk0-ak-Hkb"/>
