@@ -38,6 +38,7 @@ class AddCustomer2: UIViewController{
     @IBOutlet weak var text3: UILabel!
     @IBOutlet weak var text4: UILabel!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
 
     override func viewDidLoad() {
@@ -65,10 +66,17 @@ class AddCustomer2: UIViewController{
         nameField.delegate = self
         nameField.tag = 1
        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneBtn = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(click_doneBtn))
+        let flexiblespace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbar.items = [flexiblespace, doneBtn]
         
         phoneField.delegate = self
         phoneField.tag = 2
         phoneField.keyboardType = .numberPad
+        phoneField.inputAccessoryView = toolbar
+        
         
         checkBox1.image = UIImage(systemName: "square")
         checkBox1.isUserInteractionEnabled = true
@@ -129,12 +137,34 @@ class AddCustomer2: UIViewController{
         nextBtn.layer.borderColor = UIColor.clear.cgColor
         nextBtn.addTarget(self, action: #selector(nextview), for: .touchUpInside)
         
+        backBtn.setTitle("<back", for: .normal)
+        backBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
+        backBtn.tintColor = .white
+        backBtn.backgroundColor = mainColor
+        backBtn.layer.borderWidth = 1
+        backBtn.layer.cornerRadius = 20
+        backBtn.clipsToBounds = true
+        backBtn.layer.borderColor = UIColor.clear.cgColor
+        backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
+        
         createPickerViews()
         dismissPickerView()
         // 오토 레이아웃 함수 호출
         AutoConstraints()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func click_doneBtn(){
+        view.endEditing(true)
+    }
+    
+    
+    @objc func backView(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer1"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
     }
     
     func createPickerViews(){
@@ -309,10 +339,16 @@ class AddCustomer2: UIViewController{
         text4.centerYAnchor.constraint(equalTo: checkBox3.centerYAnchor).isActive = true
         
         nextBtn.translatesAutoresizingMaskIntoConstraints = false
-        nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 70).isActive = true
         nextBtn.topAnchor.constraint(equalTo: text4.bottomAnchor, constant: 60).isActive = true
         nextBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        backBtn.translatesAutoresizingMaskIntoConstraints = false
+        backBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -70).isActive = true
+        backBtn.topAnchor.constraint(equalTo: text4.bottomAnchor, constant: 60).isActive = true
+        backBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        backBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
 }

@@ -24,6 +24,7 @@ class AddCustomer5: UIViewController{
     @IBOutlet weak var addBtn3: UIButton!
     @IBOutlet weak var field4: UITextField!
     @IBOutlet weak var addBtn4: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -89,10 +90,27 @@ class AddCustomer5: UIViewController{
         nextBtn.clipsToBounds = true
         nextBtn.layer.borderColor = UIColor.clear.cgColor
         nextBtn.addTarget(self, action: #selector(nextview), for: .touchUpInside)
+        
+        backBtn.setTitle("<back", for: .normal)
+        backBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
+        backBtn.tintColor = .white
+        backBtn.backgroundColor = mainColor
+        backBtn.layer.borderWidth = 1
+        backBtn.layer.cornerRadius = 20
+        backBtn.clipsToBounds = true
+        backBtn.layer.borderColor = UIColor.clear.cgColor
+        backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
     }
     
     @objc func nextview(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomerLast"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
+    @objc func backView(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer4"){
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }
@@ -150,7 +168,7 @@ class AddCustomer5: UIViewController{
         addBtn1.heightAnchor.constraint(equalTo: addBtn1.widthAnchor).isActive = true
         
         nextBtn.translatesAutoresizingMaskIntoConstraints = false
-        nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 70).isActive = true
         nextBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
         nextBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -187,6 +205,12 @@ class AddCustomer5: UIViewController{
         addBtn4.leadingAnchor.constraint(equalTo: field4.trailingAnchor, constant: 15).isActive = true
         addBtn4.widthAnchor.constraint(equalToConstant: 25).isActive = true
         addBtn4.heightAnchor.constraint(equalTo: addBtn4.widthAnchor).isActive = true
+        
+        backBtn.translatesAutoresizingMaskIntoConstraints = false
+        backBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -70).isActive = true
+        backBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        backBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        backBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
 extension AddCustomer5: UIImagePickerControllerDelegate, UINavigationControllerDelegate{

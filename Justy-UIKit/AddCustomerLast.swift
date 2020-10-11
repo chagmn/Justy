@@ -15,6 +15,7 @@ class AddCustomerLast: UIViewController{
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var text2: UILabel!
     @IBOutlet weak var btn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,16 @@ class AddCustomerLast: UIViewController{
         btn.layer.borderColor = UIColor.clear.cgColor
         btn.addTarget(self, action: #selector(nextview), for: .touchUpInside)
         
+        backBtn.setTitle("<back", for: .normal)
+        backBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
+        backBtn.tintColor = .white
+        backBtn.backgroundColor = mainColor
+        backBtn.layer.borderWidth = 1
+        backBtn.layer.cornerRadius = 20
+        backBtn.clipsToBounds = true
+        backBtn.layer.borderColor = UIColor.clear.cgColor
+        backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
+        
     }
     
     @objc func nextview(){
@@ -53,6 +64,13 @@ class AddCustomerLast: UIViewController{
             self.present(controller, animated: false, completion: nil)
         }
         
+    }
+    
+    @objc func backView(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
     }
     
     func autoLayout(){
@@ -74,9 +92,15 @@ class AddCustomerLast: UIViewController{
         text2.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 10).isActive = true
     
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        btn.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 70).isActive = true
         btn.topAnchor.constraint(equalTo: text2.bottomAnchor, constant: 120).isActive = true
         btn.widthAnchor.constraint(equalToConstant: 100).isActive = true
         btn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        backBtn.translatesAutoresizingMaskIntoConstraints = false
+        backBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -70).isActive = true
+        backBtn.topAnchor.constraint(equalTo: btn.topAnchor).isActive = true
+        backBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        backBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }

@@ -31,6 +31,7 @@ class AddCustomer4: UIViewController{
     @IBOutlet weak var evi3Btn: UIButton!
     @IBOutlet weak var evi4Field: UITextField!
     @IBOutlet weak var evi4Btn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -128,6 +129,15 @@ class AddCustomer4: UIViewController{
         nextBtn.layer.borderColor = UIColor.clear.cgColor
         nextBtn.addTarget(self, action: #selector(nextview), for: .touchUpInside)
         
+        backBtn.setTitle("<back", for: .normal)
+        backBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
+        backBtn.tintColor = .white
+        backBtn.backgroundColor = mainColor
+        backBtn.layer.borderWidth = 1
+        backBtn.layer.cornerRadius = 20
+        backBtn.clipsToBounds = true
+        backBtn.layer.borderColor = UIColor.clear.cgColor
+        backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
     }
     
     @objc func UploadFile(){
@@ -160,6 +170,13 @@ class AddCustomer4: UIViewController{
     
     @objc func nextview(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
+    @objc func backView(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer3"){
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }
@@ -250,10 +267,16 @@ class AddCustomer4: UIViewController{
         evi4Btn.heightAnchor.constraint(equalTo: evi4Btn.widthAnchor).isActive = true
         
         nextBtn.translatesAutoresizingMaskIntoConstraints = false
-        nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nextBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 70).isActive = true
         nextBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
         nextBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        backBtn.translatesAutoresizingMaskIntoConstraints = false
+        backBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -70).isActive = true
+        backBtn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        backBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        backBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
 extension AddCustomer4:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
