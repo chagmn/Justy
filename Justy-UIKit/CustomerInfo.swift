@@ -76,7 +76,7 @@ class CustomerInfo: UIViewController{
         let attributeString = NSMutableAttributedString(string: "재판 상황 확인", attributes:[ NSAttributedString.Key.underlineStyle:1.0])
         checkBtn.setAttributedTitle(attributeString, for: .normal)
         checkBtn.tintColor = .black
-        //checkBtn.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControl.Event#>)()
+        checkBtn.addTarget(self, action: #selector(checkJudgeInfo), for: .touchUpInside)
         
         let gesture1 = UITapGestureRecognizer(target: self, action: #selector(checkclick1(_:)))
         
@@ -109,6 +109,13 @@ class CustomerInfo: UIViewController{
         textfield.text = "여긴 뭐가 들어가나요?"
     }
 
+    @objc func checkJudgeInfo(){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgeInfoView"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
     @objc func checkclick1(_ sender: UITapGestureRecognizer){
         if !evi1State{
             evidenceImg1.image = UIImage(systemName: "checkmark.square")

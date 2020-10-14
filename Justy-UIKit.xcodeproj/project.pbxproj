@@ -26,6 +26,7 @@
 		768C5631250A3A020016AED6 /* myPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C5630250A3A020016AED6 /* myPage.swift */; };
 		7697AB5524ED08A300B8407E /* Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697AB5424ED08A300B8407E /* Join.swift */; };
 		76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A087762519EEDD00DFF5DA /* CustomerInfo.swift */; };
+		76A539932536F9EC00EA168C /* JudgeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A539922536F9EC00EA168C /* JudgeInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		768C5630250A3A020016AED6 /* myPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPage.swift; sourceTree = "<group>"; };
 		7697AB5424ED08A300B8407E /* Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Join.swift; sourceTree = "<group>"; };
 		76A087762519EEDD00DFF5DA /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
+		76A539922536F9EC00EA168C /* JudgeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				76793A37252EA65500787EED /* AddCustomer5.swift */,
 				7614B1C924EA88B3005359EF /* ViewController.swift */,
 				7614B1CB24EA88B3005359EF /* Main.storyboard */,
+				76A539922536F9EC00EA168C /* JudgeInfo.swift */,
 				7619937F2529C8D6005310EC /* AddCustomer4.swift */,
 				76487EBF251F689800EC9442 /* AddCustomer3.swift */,
 				7608CB2A251CCDB700E449FA /* AddCustomer2.swift */,
@@ -183,6 +186,7 @@
 				76793A38252EA65500787EED /* AddCustomer5.swift in Sources */,
 				7614B1CA24EA88B3005359EF /* ViewController.swift in Sources */,
 				761993832529C9D2005310EC /* AddCustomerLast.swift in Sources */,
+				76A539932536F9EC00EA168C /* JudgeInfo.swift in Sources */,
 				7697AB5524ED08A300B8407E /* Join.swift in Sources */,
 				7608CB2B251CCDB700E449FA /* AddCustomer2.swift in Sources */,
 				7614B1C624EA88B3005359EF /* AppDelegate.swift in Sources */,
