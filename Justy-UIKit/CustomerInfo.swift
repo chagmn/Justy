@@ -19,13 +19,13 @@ class CustomerInfo: UIViewController{
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var state: UILabel!
     @IBOutlet weak var progress: UIProgressView!
-    @IBOutlet weak var checkBtn: UIButton!
     @IBOutlet weak var evidence1: UILabel!
     @IBOutlet weak var evidenceImg1: UIImageView!
     @IBOutlet weak var evidence2: UILabel!
     @IBOutlet weak var evidenceImg2: UIImageView!
     @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var judgement: UIButton!
+    
     
     var name: String = ""
     var progressNum: Float = 0.0
@@ -73,11 +73,6 @@ class CustomerInfo: UIViewController{
         progress.tintColor = mainColor
         
         
-        let attributeString = NSMutableAttributedString(string: "재판 상황 확인", attributes:[ NSAttributedString.Key.underlineStyle:1.0])
-        checkBtn.setAttributedTitle(attributeString, for: .normal)
-        checkBtn.tintColor = .black
-        checkBtn.addTarget(self, action: #selector(checkJudgeInfo), for: .touchUpInside)
-        
         let gesture1 = UITapGestureRecognizer(target: self, action: #selector(checkclick1(_:)))
         
         let gesture2 = UITapGestureRecognizer(target: self, action: #selector(checkclick2(_:)))
@@ -105,12 +100,22 @@ class CustomerInfo: UIViewController{
         submitBtn.layer.cornerRadius = 10
         submitBtn.layer.borderWidth = 1
         submitBtn.layer.borderColor = UIColor.clear.cgColor
+        //submitBtn.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
         
-        textfield.text = "여긴 뭐가 들어가나요?"
+        judgement.setTitle("재판 결과 확인", for: .normal)
+        judgement.tintColor = .white
+        judgement.backgroundColor = mainColor
+        judgement.clipsToBounds = true
+        judgement.layer.cornerRadius = 10
+        judgement.layer.borderWidth = 1
+        judgement.layer.borderColor = UIColor.clear.cgColor
+        judgement.addTarget(self, action: #selector(checkJudgement), for: .touchUpInside)
+        
+        
     }
 
-    @objc func checkJudgeInfo(){
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgeInfoView"){
+    @objc func checkJudgement(){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgementView"){
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }
