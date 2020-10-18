@@ -11,7 +11,7 @@
 		7608CB2B251CCDB700E449FA /* AddCustomer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7608CB2A251CCDB700E449FA /* AddCustomer2.swift */; };
 		7614B1C624EA88B3005359EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C524EA88B3005359EF /* AppDelegate.swift */; };
 		7614B1C824EA88B3005359EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C724EA88B3005359EF /* SceneDelegate.swift */; };
-		7614B1CA24EA88B3005359EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C924EA88B3005359EF /* ViewController.swift */; };
+		7614B1CA24EA88B3005359EF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C924EA88B3005359EF /* MainVC.swift */; };
 		7614B1CD24EA88B3005359EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7614B1CB24EA88B3005359EF /* Main.storyboard */; };
 		7614B1CF24EA88B5005359EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7614B1CE24EA88B5005359EF /* Assets.xcassets */; };
 		7614B1D224EA88B5005359EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7614B1D024EA88B5005359EF /* LaunchScreen.storyboard */; };
@@ -29,6 +29,8 @@
 		7697AB5524ED08A300B8407E /* Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697AB5424ED08A300B8407E /* Join.swift */; };
 		76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A087762519EEDD00DFF5DA /* CustomerInfo.swift */; };
 		76B49AF1253C51F800809694 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B49AF0253C51F800809694 /* Text.swift */; };
+		76B49AF6253C52BE00809694 /* MyAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B49AF5253C52BE00809694 /* MyAlamofireManager.swift */; };
+		76B49AFA253C533E00809694 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B49AF9253C533E00809694 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,7 @@
 		7614B1C224EA88B3005359EF /* Justy-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Justy-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7614B1C524EA88B3005359EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7614B1C724EA88B3005359EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7614B1C924EA88B3005359EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7614B1C924EA88B3005359EF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		7614B1CC24EA88B3005359EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7614B1CE24EA88B5005359EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7614B1D124EA88B5005359EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		7697AB5424ED08A300B8407E /* Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Join.swift; sourceTree = "<group>"; };
 		76A087762519EEDD00DFF5DA /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
 		76B49AF0253C51F800809694 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		76B49AF5253C52BE00809694 /* MyAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlamofireManager.swift; sourceTree = "<group>"; };
+		76B49AF9253C533E00809694 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		8D690B2812FDF293D4CA354B /* Pods_Justy_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Justy_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE2560F20DCF96A7D2032D84 /* Pods-Justy-UIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Justy-UIKit.debug.xcconfig"; path = "Target Support Files/Pods-Justy-UIKit/Pods-Justy-UIKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +105,7 @@
 		7614B1C424EA88B3005359EF /* Justy-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				76B49AF4253C52AE00809694 /* API */,
 				76B49AEF253C51EA00809694 /* Model */,
 				76B49AEE253C51AC00809694 /* View */,
 				7614B1C524EA88B3005359EF /* AppDelegate.swift */,
@@ -117,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				76793A37252EA65500787EED /* AddCustomer5.swift */,
-				7614B1C924EA88B3005359EF /* ViewController.swift */,
+				7614B1C924EA88B3005359EF /* MainVC.swift */,
 				7619937F2529C8D6005310EC /* AddCustomer4.swift */,
 				76487EBF251F689800EC9442 /* AddCustomer3.swift */,
 				7635140625381E9200F90783 /* Judgement.swift */,
@@ -129,8 +134,8 @@
 				7697AB5424ED08A300B8407E /* Join.swift */,
 				768C5630250A3A020016AED6 /* myPage.swift */,
 				76755FAF251357A200C2AF6B /* customerList.swift */,
-				76299F862518AD19004CEDD0 /* customerCell.xib */,
 				76299F892518AE8B004CEDD0 /* customerCell.swift */,
+				76299F862518AD19004CEDD0 /* customerCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,8 +144,17 @@
 			isa = PBXGroup;
 			children = (
 				76B49AF0253C51F800809694 /* Text.swift */,
+				76B49AF9253C533E00809694 /* Common.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		76B49AF4253C52AE00809694 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				76B49AF5253C52BE00809694 /* MyAlamofireManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		EE35C9DCEB4447CC17BBEE4C /* Pods */ = {
@@ -271,9 +285,10 @@
 				768C5631250A3A020016AED6 /* myPage.swift in Sources */,
 				76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */,
 				76793A38252EA65500787EED /* AddCustomer5.swift in Sources */,
-				7614B1CA24EA88B3005359EF /* ViewController.swift in Sources */,
+				7614B1CA24EA88B3005359EF /* MainVC.swift in Sources */,
 				761993832529C9D2005310EC /* AddCustomerLast.swift in Sources */,
 				7697AB5524ED08A300B8407E /* Join.swift in Sources */,
+				76B49AF6253C52BE00809694 /* MyAlamofireManager.swift in Sources */,
 				7608CB2B251CCDB700E449FA /* AddCustomer2.swift in Sources */,
 				7614B1C624EA88B3005359EF /* AppDelegate.swift in Sources */,
 				761993802529C8D6005310EC /* AddCustomer4.swift in Sources */,
@@ -282,6 +297,7 @@
 				76B49AF1253C51F800809694 /* Text.swift in Sources */,
 				7646CC5E251CBE3E00527C75 /* AddCustomer1.swift in Sources */,
 				76755FB0251357A300C2AF6B /* customerList.swift in Sources */,
+				76B49AFA253C533E00809694 /* Common.swift in Sources */,
 				7635140725381E9200F90783 /* Judgement.swift in Sources */,
 				76299F8A2518AE8B004CEDD0 /* customerCell.swift in Sources */,
 				76487EC0251F689800EC9442 /* AddCustomer3.swift in Sources */,

@@ -8,9 +8,8 @@
 
 import UIKit
 
-class customerList: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8784313725, blue: 0.2823529412, alpha: 1)
-    
+class customerList: Common{
+
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +21,10 @@ class customerList: UIViewController{
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
+        self.config()
+    }
+    
+    func config(){
         naviBar.isTranslucent = false
         naviBar.barTintColor = mainColor
         naviBar.topItem?.title = "회원 관리"
@@ -49,8 +52,7 @@ class customerList: UIViewController{
         self.tableView.dataSource = self
     }
     
-    
-    
+    // MARK: - IBAction methods
     @IBAction func goBack(_ sender: Any) {
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "myPageView"){
             controller.modalPresentationStyle = .currentContext
@@ -58,6 +60,7 @@ class customerList: UIViewController{
         }
     }
     
+    // MARK: - objc methods
     @objc func addCustomer(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddCustomer1"){
             controller.modalPresentationStyle = .currentContext
@@ -66,7 +69,7 @@ class customerList: UIViewController{
     }
 }
 
-
+// MARK: - Extension
 extension customerList: UITableViewDelegate{
     
 }

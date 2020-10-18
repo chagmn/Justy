@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CustomerInfo: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class CustomerInfo: Common{
+    
     var evi1State:Bool = false
     var evi2State:Bool = false
 
@@ -34,6 +34,10 @@ class CustomerInfo: UIViewController{
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
+        self.config()
+    }
+    
+    func config(){
         naviBar.isTranslucent = false
         naviBar.barTintColor = mainColor
         naviBar.topItem?.title = "회원 관리"
@@ -110,10 +114,9 @@ class CustomerInfo: UIViewController{
         judgement.layer.borderWidth = 1
         judgement.layer.borderColor = UIColor.clear.cgColor
         judgement.addTarget(self, action: #selector(checkJudgement), for: .touchUpInside)
-        
-        
     }
 
+    // MARK: - objc methods
     @objc func checkJudgement(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgementView"){
             controller.modalPresentationStyle = .currentContext

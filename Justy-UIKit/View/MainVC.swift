@@ -8,19 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    let btn_Color = UIColor(red: 255.0, green: 220.0, blue: 57.0, alpha: 1.0)
+class ViewController: Common {
+    
     let btn_Login = UIButton()
     let btn_Join = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light // 항상 light mode 
+   
+    }
+    
+    func config(){
         btn_Login.setTitle("LOGIN", for: .normal)
         btn_Login.setTitleColor(.white, for: .normal)
-        btn_Login.backgroundColor = btn_Color
+        btn_Login.backgroundColor = mainColor
     }
 
+    // MARK: - IBAction Methods
     @IBAction func login_btn(_ sender: Any) {
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "LoginView"){
             //controller.modalPresentationStyle = .fullScreen

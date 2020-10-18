@@ -9,8 +9,8 @@
 import UIKit
 
 // 이혼하는 이유
-class AddCustomer3: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class AddCustomer3: Common{
+    
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var micBtn: UIButton!
@@ -23,6 +23,10 @@ class AddCustomer3: UIViewController{
         overrideUserInterfaceStyle = .light
         autoLayout()
         
+        self.config()
+    }
+    
+    func config(){
         img.image = UIImage(systemName: "questionmark.circle.fill")
         img.tintColor = mainColor
         
@@ -66,12 +70,15 @@ class AddCustomer3: UIViewController{
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    @objc func keyboardWillHide(_ sender: Notification) {
-        self.view.frame.origin.y = 0
-    }
     
+    // MARK: - Override Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    // MARK: - objc Methods
+    @objc func keyboardWillHide(_ sender: Notification) {
+        self.view.frame.origin.y = 0
     }
     
     @objc func backView(){
@@ -88,6 +95,7 @@ class AddCustomer3: UIViewController{
         }
     }
     
+    // MARK: - AutoLayout
     func autoLayout(){
         img.translatesAutoresizingMaskIntoConstraints = false
         img.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
@@ -126,6 +134,8 @@ class AddCustomer3: UIViewController{
        
     }
 }
+
+// MARK: - Extension
 extension AddCustomer3: UITextViewDelegate{
     func placeHolderSetting(){
         if textfield.text == "내용을 입력해주세요."{

@@ -31,7 +31,10 @@ class AddCustomer5: UIViewController{
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         autoLayout()
-        
+    
+    }
+    
+    func config(){
         img.image = UIImage(systemName: "questionmark.circle.fill")
         img.tintColor = mainColor
         
@@ -102,6 +105,18 @@ class AddCustomer5: UIViewController{
         backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
     }
     
+    // MARK: - Methods
+    func openLibrary(){
+        picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera(){
+        picker.sourceType = .camera
+        present(picker, animated: false, completion: nil)
+    }
+    
+    // MARK: - Objc Methods
     @objc func nextview(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomerLast"){
             controller.modalPresentationStyle = .currentContext
@@ -134,16 +149,7 @@ class AddCustomer5: UIViewController{
         present(alert, animated: true, completion: nil)
     }
     
-    func openLibrary(){
-        picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
-    }
-    
-    func openCamera(){
-        picker.sourceType = .camera
-        present(picker, animated: false, completion: nil)
-    }
-    
+    // MARK: - AutoLayout
     func autoLayout(){
         img.translatesAutoresizingMaskIntoConstraints = false
         img.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
@@ -213,6 +219,8 @@ class AddCustomer5: UIViewController{
         backBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
+
+// MARK: - Extension
 extension AddCustomer5: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print(info)

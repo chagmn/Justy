@@ -9,8 +9,8 @@
 import UIKit
 
 // 가족 관계 확인 
-class AddCustomer4: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class AddCustomer4: Common{
+    
     let screenWidth: CGFloat = UIScreen.main.bounds.size.width
     let screenHeight: CGFloat = UIScreen.main.bounds.size.height
     let picker = UIImagePickerController()
@@ -38,6 +38,11 @@ class AddCustomer4: UIViewController{
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         autoLayout()
+
+        self.config()
+    }
+    
+    func config(){
         picker.delegate = self
        
         img.image = UIImage(systemName: "questionmark.circle.fill")
@@ -139,6 +144,36 @@ class AddCustomer4: UIViewController{
         backBtn.layer.borderColor = UIColor.clear.cgColor
         backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
     }
+
+    // MARK: - Methods
+    func openLibrary(){
+        picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera(){
+        picker.sourceType = .camera
+        present(picker, animated: false, completion: nil)
+    }
+    
+    // MARK: - Objc Methods
+    @objc func nextview(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
+    @objc func backView(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer3"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
+    @objc func click_doneBtn(){
+        view.endEditing(true)
+    }
     
     @objc func UploadFile(){
         let alert = UIAlertController(title: "사진 업로드", message: "원하는 방법을 선택하시오.", preferredStyle: .actionSheet)
@@ -158,34 +193,7 @@ class AddCustomer4: UIViewController{
         present(alert, animated: true, completion: nil)
     }
     
-    func openLibrary(){
-        picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
-    }
-    
-    func openCamera(){
-        picker.sourceType = .camera
-        present(picker, animated: false, completion: nil)
-    }
-    
-    @objc func nextview(){
-        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5"){
-            controller.modalPresentationStyle = .currentContext
-            self.present(controller, animated: false, completion: nil)
-        }
-    }
-    
-    @objc func backView(){
-        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer3"){
-            controller.modalPresentationStyle = .currentContext
-            self.present(controller, animated: false, completion: nil)
-        }
-    }
-    
-    @objc func click_doneBtn(){
-        view.endEditing(true)
-    }
-    
+    // MARK: - AutoLayout
     func autoLayout(){
         img.translatesAutoresizingMaskIntoConstraints = false
         img.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
@@ -279,6 +287,8 @@ class AddCustomer4: UIViewController{
         backBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 }
+
+// MARK: - Extension
 extension AddCustomer4:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print(info)

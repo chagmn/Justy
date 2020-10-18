@@ -9,8 +9,8 @@
 import UIKit
 
 // 고객 기본 정보
-class AddCustomer2: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class AddCustomer2: Common{
+    
     let year: [Int] = Array(1950...2020)
     let month: [Int] = Array(1...12)
     let day: [Int] = Array(1...31)
@@ -45,6 +45,13 @@ class AddCustomer2: UIViewController{
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
+        config()
+        createPickerViews()
+        dismissPickerView()
+        AutoConstraints()
+    }
+    
+    func config(){
         img1.image = UIImage(systemName: "questionmark.circle.fill")
         img1.tintColor = mainColor
         
@@ -147,26 +154,11 @@ class AddCustomer2: UIViewController{
         backBtn.layer.borderColor = UIColor.clear.cgColor
         backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
         
-        createPickerViews()
-        dismissPickerView()
-        // 오토 레이아웃 함수 호출
-        AutoConstraints()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
-    @objc func click_doneBtn(){
-        view.endEditing(true)
-    }
-    
-    
-    @objc func backView(){
-        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer1"){
-            controller.modalPresentationStyle = .currentContext
-            self.present(controller, animated: false, completion: nil)
-        }
-    }
-    
+       
+    // MARK: - function
     func createPickerViews(){
         let yearPickerView = UIPickerView()
         yearPickerView.tag = 1
@@ -198,6 +190,19 @@ class AddCustomer2: UIViewController{
         yearField.inputAccessoryView = toolBar
         monthField.inputAccessoryView = toolBar
         dayField.inputAccessoryView = toolBar
+    }
+    
+    // MARK: - objc methods
+    @objc func click_doneBtn(){
+        view.endEditing(true)
+    }
+    
+    
+    @objc func backView(){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer1"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
     }
     
     @objc func action(){
@@ -249,7 +254,7 @@ class AddCustomer2: UIViewController{
         }
     }
     
-    // AutoLayout Constranints
+    // MARK: - AutoLayout
     func AutoConstraints(){
         text1.translatesAutoresizingMaskIntoConstraints = false
         text1.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -364,6 +369,7 @@ extension AddCustomer2: UITextFieldDelegate{
     }
 }
 
+// MARK: - Extension
 extension AddCustomer2: UIPickerViewDelegate{
     
 }

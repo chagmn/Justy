@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class customerCell: UITableViewCell {
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class customerCell: UITableViewCell, Common {
+    
     @IBOutlet weak var customerImg: UIImageView!
     @IBOutlet weak var customerProgress: UIProgressView!
     @IBOutlet weak var customerName: UILabel!

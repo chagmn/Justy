@@ -7,8 +7,8 @@
 //
 import UIKit
 
-class myPage: UIViewController {
-    let mainColor = #colorLiteral(red: 1, green: 0.862745098, blue: 0.2235294118, alpha: 1)
+class myPage: Common {
+    
    
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var userName: UILabel!
@@ -22,6 +22,10 @@ class myPage: UIViewController {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
+        self.config()
+    }
+    
+    func config(){
         let backBtn = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBtn
         
@@ -32,7 +36,7 @@ class myPage: UIViewController {
         naviBar.topItem?.title = ""
         
         userImage.image = UIImage(systemName: "person")
-        //userImage.tintColor = 
+        //userImage.tintColor =
         userImage.backgroundColor = .lightGray
         userImage.layer.cornerRadius = userImage.frame.height/2
         userImage.layer.borderWidth = 1
@@ -63,8 +67,10 @@ class myPage: UIViewController {
         // 프로그레스바 설정
         progressBar.progressTintColor = mainColor
         progressBar.progress = 0.5
+        
     }
     
+    // MARK: - objc methods
     @objc func leftButtonAction(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerListView"){
             controller.modalPresentationStyle = .currentContext

@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class Judgement: UIViewController {
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class Judgement: Common {
+    
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var backBtn: UIBarButtonItem!
     @IBOutlet weak var judgement: UITextView!
@@ -21,6 +21,10 @@ class Judgement: UIViewController {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
+        self.config()
+    }
+    
+    func config(){
         naviBar.isTranslucent = false
         naviBar.barTintColor = mainColor
         naviBar.topItem?.title = "판결문 확인"
@@ -34,8 +38,9 @@ class Judgement: UIViewController {
         
         judgement.textColor = .black
         
-        
     }
+    
+    // MARK: - objc method
     @objc func goBack(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView"){
             controller.modalPresentationStyle = .currentContext

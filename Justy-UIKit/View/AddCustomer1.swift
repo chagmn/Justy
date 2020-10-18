@@ -8,9 +8,8 @@
 
 import UIKit
 
-class AddCustomer1: UIViewController{
-    let color = #colorLiteral(red: 0.9882352941, green: 0.9333333333, blue: 0.7137254902, alpha: 1)
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class AddCustomer1: Common{
+    
     @IBOutlet weak var icomImg: UIImageView!
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var text2: UILabel!
@@ -21,6 +20,10 @@ class AddCustomer1: UIViewController{
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
          
+        self.config()
+    }
+    
+    func config(){
         icomImg.image = UIImage(systemName: "smiley")
         icomImg.tintColor = .black
         
@@ -58,6 +61,7 @@ class AddCustomer1: UIViewController{
         backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
     }
     
+    // MARK: - objc methods
     @objc func backView(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "customerListView"){
             controller.modalPresentationStyle = .currentContext

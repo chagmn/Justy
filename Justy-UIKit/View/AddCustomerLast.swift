@@ -8,8 +8,7 @@
 
 import UIKit
 
-class AddCustomerLast: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+class AddCustomerLast: Common{
     
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var text1: UILabel!
@@ -22,6 +21,10 @@ class AddCustomerLast: UIViewController{
         overrideUserInterfaceStyle = .light
         autoLayout()
         
+        self.config()
+    }
+    
+    func config(){
         img.image = UIImage(systemName: "smiley")
         img.tintColor = .black
         
@@ -55,9 +58,10 @@ class AddCustomerLast: UIViewController{
         backBtn.clipsToBounds = true
         backBtn.layer.borderColor = UIColor.clear.cgColor
         backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
-        
     }
     
+    
+    // MARK: - objc methods
     @objc func nextview(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "customerListView"){
             controller.modalPresentationStyle = .currentContext
@@ -73,6 +77,8 @@ class AddCustomerLast: UIViewController{
         }
     }
     
+    
+    // MARK: - autoLayout
     func autoLayout(){
         img.translatesAutoresizingMaskIntoConstraints = false
         img.widthAnchor.constraint(equalToConstant: 90).isActive = true

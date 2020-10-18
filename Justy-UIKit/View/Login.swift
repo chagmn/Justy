@@ -8,9 +8,8 @@
 
 import UIKit
 
-class Login: UIViewController, UITextFieldDelegate {
-    let mainColor = UIColor(red: 255.0, green: 220.0, blue: 57.0, alpha: 1.0)
-    
+class Login: Common, UITextFieldDelegate {
+
     @IBOutlet weak var label_id: UILabel!
     @IBOutlet weak var label_pw: UILabel!
     @IBOutlet weak var textbox_ID: UITextField!
@@ -21,9 +20,12 @@ class Login: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         overrideUserInterfaceStyle = .light
         
+        self.config()
+    }
+    
+    func config(){
         label_id.text = "아이디"
         label_id.textAlignment = .center
         
@@ -40,14 +42,15 @@ class Login: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-
     }
     
+    // MARK: - function
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    // MARK: - objc Methods
     // 화면을 키보드가 가리지않게 올리기
     @objc func keyboardWillShow(_ sender: Notification) {
          self.view.frame.origin.y = -150
@@ -57,7 +60,8 @@ class Login: UIViewController, UITextFieldDelegate {
     @objc func keyboardWillHide(_ sender: Notification) {
         self.view.frame.origin.y = 0
     }
-
+    
+    // MARK: - IBAction methods
     // ID, PW 확인 후 로그인
     @IBAction func check_Login(_ sender: Any) {
         if ((textbox_ID.text == admin_ID) && (textbox_PW.text == admin_PW)) {
