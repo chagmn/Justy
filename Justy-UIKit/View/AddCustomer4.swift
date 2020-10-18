@@ -289,9 +289,23 @@ class AddCustomer4: Common{
 }
 
 // MARK: - Extension
-extension AddCustomer4:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension AddCustomer4: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         print(info)
+        let url: NSURL  = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.imageURL.rawValue)] as! NSURL
+        print("AddCustomer4: \(url)")
+        
+        do{
+            
+            let imageData = try Data(contentsOf: url as URL)
+            uploadImageToServer(a: imageData)
+        }catch{
+            print("NSURL Fucking")
+        }
+        
+        
     }
     
 }
