@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		274632BFA3337196B3AECC15 /* Pods_Justy_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D690B2812FDF293D4CA354B /* Pods_Justy_UIKit.framework */; };
 		7608CB2B251CCDB700E449FA /* AddCustomer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7608CB2A251CCDB700E449FA /* AddCustomer2.swift */; };
 		7614B1C624EA88B3005359EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C524EA88B3005359EF /* AppDelegate.swift */; };
 		7614B1C824EA88B3005359EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7614B1C724EA88B3005359EF /* SceneDelegate.swift */; };
@@ -27,9 +28,11 @@
 		768C5631250A3A020016AED6 /* myPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C5630250A3A020016AED6 /* myPage.swift */; };
 		7697AB5524ED08A300B8407E /* Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697AB5424ED08A300B8407E /* Join.swift */; };
 		76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A087762519EEDD00DFF5DA /* CustomerInfo.swift */; };
+		76B49AF1253C51F800809694 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B49AF0253C51F800809694 /* Text.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6228EBD5E063C9E425A19C70 /* Pods-Justy-UIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Justy-UIKit.release.xcconfig"; path = "Target Support Files/Pods-Justy-UIKit/Pods-Justy-UIKit.release.xcconfig"; sourceTree = "<group>"; };
 		7608CB2A251CCDB700E449FA /* AddCustomer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer2.swift; sourceTree = "<group>"; };
 		7614B1C224EA88B3005359EF /* Justy-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Justy-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7614B1C524EA88B3005359EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +55,9 @@
 		768C5630250A3A020016AED6 /* myPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPage.swift; sourceTree = "<group>"; };
 		7697AB5424ED08A300B8407E /* Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Join.swift; sourceTree = "<group>"; };
 		76A087762519EEDD00DFF5DA /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
+		76B49AF0253C51F800809694 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		8D690B2812FDF293D4CA354B /* Pods_Justy_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Justy_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE2560F20DCF96A7D2032D84 /* Pods-Justy-UIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Justy-UIKit.debug.xcconfig"; path = "Target Support Files/Pods-Justy-UIKit/Pods-Justy-UIKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,17 +65,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274632BFA3337196B3AECC15 /* Pods_Justy_UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EB962D11F2509575CDCCF97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D690B2812FDF293D4CA354B /* Pods_Justy_UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7614B1B924EA88B3005359EF = {
 			isa = PBXGroup;
 			children = (
 				7614B1C424EA88B3005359EF /* Justy-UIKit */,
 				7614B1C324EA88B3005359EF /* Products */,
+				EE35C9DCEB4447CC17BBEE4C /* Pods */,
+				6EB962D11F2509575CDCCF97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,21 +101,30 @@
 		7614B1C424EA88B3005359EF /* Justy-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				76B49AEF253C51EA00809694 /* Model */,
+				76B49AEE253C51AC00809694 /* View */,
 				7614B1C524EA88B3005359EF /* AppDelegate.swift */,
 				7614B1C724EA88B3005359EF /* SceneDelegate.swift */,
+				7614B1CB24EA88B3005359EF /* Main.storyboard */,
+				7614B1CE24EA88B5005359EF /* Assets.xcassets */,
+				7614B1D024EA88B5005359EF /* LaunchScreen.storyboard */,
+				7614B1D324EA88B5005359EF /* Info.plist */,
+			);
+			path = "Justy-UIKit";
+			sourceTree = "<group>";
+		};
+		76B49AEE253C51AC00809694 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				76793A37252EA65500787EED /* AddCustomer5.swift */,
 				7614B1C924EA88B3005359EF /* ViewController.swift */,
-				7614B1CB24EA88B3005359EF /* Main.storyboard */,
 				7619937F2529C8D6005310EC /* AddCustomer4.swift */,
 				76487EBF251F689800EC9442 /* AddCustomer3.swift */,
 				7635140625381E9200F90783 /* Judgement.swift */,
 				7608CB2A251CCDB700E449FA /* AddCustomer2.swift */,
 				7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */,
 				76A087762519EEDD00DFF5DA /* CustomerInfo.swift */,
-				7614B1CE24EA88B5005359EF /* Assets.xcassets */,
-				7614B1D024EA88B5005359EF /* LaunchScreen.storyboard */,
 				761993822529C9D2005310EC /* AddCustomerLast.swift */,
-				7614B1D324EA88B5005359EF /* Info.plist */,
 				7614B1D924EAE4B3005359EF /* Login.swift */,
 				7697AB5424ED08A300B8407E /* Join.swift */,
 				768C5630250A3A020016AED6 /* myPage.swift */,
@@ -106,7 +132,24 @@
 				76299F862518AD19004CEDD0 /* customerCell.xib */,
 				76299F892518AE8B004CEDD0 /* customerCell.swift */,
 			);
-			path = "Justy-UIKit";
+			path = View;
+			sourceTree = "<group>";
+		};
+		76B49AEF253C51EA00809694 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76B49AF0253C51F800809694 /* Text.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE35C9DCEB4447CC17BBEE4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE2560F20DCF96A7D2032D84 /* Pods-Justy-UIKit.debug.xcconfig */,
+				6228EBD5E063C9E425A19C70 /* Pods-Justy-UIKit.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7614B1D624EA88B5005359EF /* Build configuration list for PBXNativeTarget "Justy-UIKit" */;
 			buildPhases = (
+				08B65CA2C5A1C94471FAA2A2 /* [CP] Check Pods Manifest.lock */,
 				7614B1BE24EA88B3005359EF /* Sources */,
 				7614B1BF24EA88B3005359EF /* Frameworks */,
 				7614B1C024EA88B3005359EF /* Resources */,
+				AA6B0429C876F0CA9F25BAEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,6 +221,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08B65CA2C5A1C94471FAA2A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Justy-UIKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA6B0429C876F0CA9F25BAEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Justy-UIKit/Pods-Justy-UIKit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Justy-UIKit/Pods-Justy-UIKit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Justy-UIKit/Pods-Justy-UIKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7614B1BE24EA88B3005359EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,6 +279,7 @@
 				761993802529C8D6005310EC /* AddCustomer4.swift in Sources */,
 				7614B1C824EA88B3005359EF /* SceneDelegate.swift in Sources */,
 				7614B1DA24EAE4B3005359EF /* Login.swift in Sources */,
+				76B49AF1253C51F800809694 /* Text.swift in Sources */,
 				7646CC5E251CBE3E00527C75 /* AddCustomer1.swift in Sources */,
 				76755FB0251357A300C2AF6B /* customerList.swift in Sources */,
 				7635140725381E9200F90783 /* Judgement.swift in Sources */,
@@ -340,6 +428,7 @@
 		};
 		7614B1D724EA88B5005359EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE2560F20DCF96A7D2032D84 /* Pods-Justy-UIKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,6 +447,7 @@
 		};
 		7614B1D824EA88B5005359EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6228EBD5E063C9E425A19C70 /* Pods-Justy-UIKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
