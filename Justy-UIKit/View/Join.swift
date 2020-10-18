@@ -31,7 +31,7 @@ class Join: Common, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataS
     }
     
 
-    func config(){
+    fileprivate func config(){
         navigation_bar.topItem?.title = "회원가입"
 
 

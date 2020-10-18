@@ -51,7 +51,7 @@ class AddCustomer2: Common{
         AutoConstraints()
     }
     
-    func config(){
+    fileprivate func config(){
         img1.image = UIImage(systemName: "questionmark.circle.fill")
         img1.tintColor = mainColor
         

@@ -25,7 +25,7 @@ class myPage: Common {
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         let backBtn = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBtn
         

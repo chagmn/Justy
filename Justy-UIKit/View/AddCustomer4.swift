@@ -42,7 +42,7 @@ class AddCustomer4: Common{
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         picker.delegate = self
        
         img.image = UIImage(systemName: "questionmark.circle.fill")

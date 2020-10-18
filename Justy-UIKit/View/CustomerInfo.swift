@@ -37,7 +37,7 @@ class CustomerInfo: Common{
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         naviBar.isTranslucent = false
         naviBar.barTintColor = mainColor
         naviBar.topItem?.title = "회원 관리"

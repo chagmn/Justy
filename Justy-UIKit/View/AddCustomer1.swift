@@ -23,7 +23,7 @@ class AddCustomer1: Common{
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         icomImg.image = UIImage(systemName: "smiley")
         icomImg.tintColor = .black
         

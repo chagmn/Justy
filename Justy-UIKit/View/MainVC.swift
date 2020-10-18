@@ -19,7 +19,7 @@ class ViewController: Common {
    
     }
     
-    func config(){
+    fileprivate func config(){
         btn_Login.setTitle("LOGIN", for: .normal)
         btn_Login.setTitleColor(.white, for: .normal)
         btn_Login.backgroundColor = mainColor

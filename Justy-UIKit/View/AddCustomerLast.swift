@@ -24,7 +24,7 @@ class AddCustomerLast: Common{
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         img.image = UIImage(systemName: "smiley")
         img.tintColor = .black
         

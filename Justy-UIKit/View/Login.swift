@@ -25,7 +25,7 @@ class Login: Common, UITextFieldDelegate {
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         label_id.text = "아이디"
         label_id.textAlignment = .center
         

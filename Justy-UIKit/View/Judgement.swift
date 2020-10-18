@@ -24,7 +24,7 @@ class Judgement: Common {
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         naviBar.isTranslucent = false
         naviBar.barTintColor = mainColor
         naviBar.topItem?.title = "판결문 확인"

@@ -26,7 +26,7 @@ class AddCustomer3: Common{
         self.config()
     }
     
-    func config(){
+    fileprivate func config(){
         img.image = UIImage(systemName: "questionmark.circle.fill")
         img.tintColor = mainColor
         
