@@ -47,7 +47,6 @@ class Common: UIViewController {
             let responseJson =  JSON(response.value!)
             let jsonArray = responseJson["result"]
             
-            //print("jsonArray.size : \(jsonArray.count)")
             
             for (_, subJson): (String, JSON) in jsonArray{
                 let text = subJson["recognition_words"].array!

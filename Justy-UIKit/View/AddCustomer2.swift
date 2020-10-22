@@ -8,7 +8,9 @@
 
 import UIKit
 
+
 // 고객 기본 정보
+
 class AddCustomer2: Common{
     
     let year: [Int] = Array(1950...2020)
@@ -174,6 +176,9 @@ class AddCustomer2: Common{
         dayPickerView.tag = 3
         dayPickerView.delegate = self
         dayField.inputView = dayPickerView
+        
+        
+        
     }
     
     func dismissPickerView(){
@@ -358,6 +363,7 @@ class AddCustomer2: Common{
 
 }
 
+
 extension AddCustomer2: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 1{
@@ -370,9 +376,11 @@ extension AddCustomer2: UITextFieldDelegate{
 }
 
 // MARK: - Extension
+
 extension AddCustomer2: UIPickerViewDelegate{
     
 }
+
 
 extension AddCustomer2: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

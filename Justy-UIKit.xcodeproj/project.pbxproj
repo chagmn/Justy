@@ -124,19 +124,19 @@
 		76B49AEE253C51AC00809694 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				76793A37252EA65500787EED /* AddCustomer5.swift */,
 				7614B1C924EA88B3005359EF /* MainVC.swift */,
-				7619937F2529C8D6005310EC /* AddCustomer4.swift */,
-				76487EBF251F689800EC9442 /* AddCustomer3.swift */,
-				7635140625381E9200F90783 /* Judgement.swift */,
-				7608CB2A251CCDB700E449FA /* AddCustomer2.swift */,
-				7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */,
-				76A087762519EEDD00DFF5DA /* CustomerInfo.swift */,
-				761993822529C9D2005310EC /* AddCustomerLast.swift */,
 				7614B1D924EAE4B3005359EF /* Login.swift */,
 				7697AB5424ED08A300B8407E /* Join.swift */,
 				768C5630250A3A020016AED6 /* myPage.swift */,
+				76A087762519EEDD00DFF5DA /* CustomerInfo.swift */,
 				76755FAF251357A200C2AF6B /* customerList.swift */,
+				7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */,
+				7608CB2A251CCDB700E449FA /* AddCustomer2.swift */,
+				76487EBF251F689800EC9442 /* AddCustomer3.swift */,
+				7619937F2529C8D6005310EC /* AddCustomer4.swift */,
+				76793A37252EA65500787EED /* AddCustomer5.swift */,
+				761993822529C9D2005310EC /* AddCustomerLast.swift */,
+				7635140625381E9200F90783 /* Judgement.swift */,
 				76299F892518AE8B004CEDD0 /* customerCell.swift */,
 				76299F862518AD19004CEDD0 /* customerCell.xib */,
 			);

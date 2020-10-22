@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import PhotosUI
 
-// 가족 관계 확인 
-class AddCustomer4: Common{
+// 가족 관계 확인
+@available(iOS 14, *)
+class AddCustomer4: Common, PHPickerViewControllerDelegate{
     
     let screenWidth: CGFloat = UIScreen.main.bounds.size.width
     let screenHeight: CGFloat = UIScreen.main.bounds.size.height
     let picker = UIImagePickerController()
+    
+    
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var text1: UILabel!
@@ -63,6 +67,7 @@ class AddCustomer4: Common{
         Btn_AttestedCopy.tintColor = .black
         Btn_AttestedCopy.contentVerticalAlignment = .fill
         Btn_AttestedCopy.contentHorizontalAlignment = .fill
+        Btn_AttestedCopy.tag = 1
         Btn_AttestedCopy.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         evi2Field.isEnabled = false
@@ -74,6 +79,7 @@ class AddCustomer4: Common{
         evi2Btn.tintColor = .black
         evi2Btn.contentVerticalAlignment = .fill
         evi2Btn.contentHorizontalAlignment = .fill
+        evi2Btn.tag = 2
         evi2Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         let toolbar = UIToolbar()
@@ -111,6 +117,7 @@ class AddCustomer4: Common{
         evi3Btn.tintColor = .black
         evi3Btn.contentVerticalAlignment = .fill
         evi3Btn.contentHorizontalAlignment = .fill
+        evi3Btn.tag = 3
         evi3Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         evi4Field.isEnabled = false
@@ -122,6 +129,7 @@ class AddCustomer4: Common{
         evi4Btn.tintColor = .black
         evi4Btn.contentVerticalAlignment = .fill
         evi4Btn.contentHorizontalAlignment = .fill
+        evi4Btn.tag = 4
         evi4Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         nextBtn.setTitle("next>", for: .normal)
@@ -143,12 +151,42 @@ class AddCustomer4: Common{
         backBtn.clipsToBounds = true
         backBtn.layer.borderColor = UIColor.clear.cgColor
         backBtn.addTarget(self, action: #selector(backView), for: .touchUpInside)
+        
     }
 
     // MARK: - Methods
-    func openLibrary(){
-        picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
+    @available(iOS 14, *)
+    func openLibrary(tag: Int){
+//        picker.sourceType = .photoLibrary
+//        present(picker, animated: false, completion: nil)
+        
+        print("!!! openLibrary called !!!")
+        
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 1
+        configuration.filter = .any(of: [.images])
+        
+        let picker2 = PHPickerViewController(configuration: configuration)
+        picker2.delegate = self
+        self.present(picker2, animated: true,completion: nil)
+        
+        switch tag {
+        case 1:
+            self.textField_AttestedCopy.text = "등본 업로드 완료"
+            break
+        case 2:
+            self.evi2Field.text = "가족관계증명서 업로드 완료"
+            break
+        case 3:
+            self.evi3Field.text = "협의서 업로드 완료"
+            break
+        case 4:
+            self.evi4Field.text = "심판 정본 업로드 완료"
+            break
+        default:
+            print("실패")
+        }
+        
     }
     
     func openCamera(){
@@ -156,6 +194,26 @@ class AddCustomer4: Common{
         present(picker, animated: false, completion: nil)
     }
     
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        print("!!! Picker called !!!")
+            
+        picker.dismiss(animated: true)
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider,
+           itemProvider.canLoadObject(ofClass: UIImage.self){
+            itemProvider.loadObject(ofClass: UIImage.self){ (image, error) in
+                DispatchQueue.main.async {
+                    let image: UIImage = (image as? UIImage)!
+                    let imageData = image.jpegData(compressionQuality: 1.0)!
+                    self.uploadImageToServer(a: imageData)
+                }
+            }
+        }
+    }
+    
+
     // MARK: - Objc Methods
     @objc func nextview(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5"){
@@ -175,10 +233,13 @@ class AddCustomer4: Common{
         view.endEditing(true)
     }
     
-    @objc func UploadFile(){
+    @objc func UploadFile(sender: UIButton!){
+        print("!!! UploadFile called !!!")
+
         let alert = UIAlertController(title: "사진 업로드", message: "원하는 방법을 선택하시오.", preferredStyle: .actionSheet)
         
-        let library = UIAlertAction(title: "사진앨범", style: .default){ (action) in self.openLibrary()
+        let library = UIAlertAction(title: "사진앨범", style: .default){ (action) in
+            self.openLibrary(tag: sender.tag)
         }
         
         let camera = UIAlertAction(title: "카메라", style: .default){ (action) in
@@ -289,23 +350,21 @@ class AddCustomer4: Common{
 }
 
 // MARK: - Extension
+@available(iOS 14, *)
 extension AddCustomer4: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        print(info)
-        let url: NSURL  = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.imageURL.rawValue)] as! NSURL
-        print("AddCustomer4: \(url)")
-        
-        do{
-            
-            let imageData = try Data(contentsOf: url as URL)
-            uploadImageToServer(a: imageData)
-        }catch{
-            print("NSURL Fucking")
-        }
-        
-        
-    }
-    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//
+//        print(info)
+//        let url: NSURL  = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.imageURL.rawValue)] as! NSURL
+//        print("AddCustomer4: \(url)")
+//
+//        do{
+//
+//            let imageData = try Data(contentsOf: url as URL)
+//            uploadImageToServer(a: imageData)
+//        }catch{
+//            print("NSURL Fucking")
+//        }
+//    }
 }

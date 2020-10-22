@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import PhotosUI
 
 // 필요 서류 등록
-class AddCustomer5: UIViewController{
-    let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
+@available(iOS 14, *)
+class AddCustomer5: Common, PHPickerViewControllerDelegate{
+    
     let picker = UIImagePickerController()
     
     @IBOutlet weak var img: UIImageView!
@@ -32,6 +34,7 @@ class AddCustomer5: UIViewController{
         overrideUserInterfaceStyle = .light
         autoLayout()
     
+        self.config()
     }
     
     fileprivate func config(){
@@ -51,6 +54,7 @@ class AddCustomer5: UIViewController{
         addBtn1.tintColor = .black
         addBtn1.contentVerticalAlignment = .fill
         addBtn1.contentHorizontalAlignment = .fill
+        addBtn1.tag = 1
         addBtn1.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         field2.placeholder = "진술서 등록"
@@ -61,6 +65,7 @@ class AddCustomer5: UIViewController{
         addBtn2.tintColor = .black
         addBtn2.contentVerticalAlignment = .fill
         addBtn2.contentHorizontalAlignment = .fill
+        addBtn2.tag = 2
         addBtn2.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         field3.placeholder = "재외국민등록등본"
@@ -71,6 +76,7 @@ class AddCustomer5: UIViewController{
         addBtn3.tintColor = .black
         addBtn3.contentVerticalAlignment = .fill
         addBtn3.contentHorizontalAlignment = .fill
+        addBtn3.tag = 3
         addBtn3.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         field4.placeholder = "재감인 증명서"
@@ -81,6 +87,7 @@ class AddCustomer5: UIViewController{
         addBtn4.tintColor = .black
         addBtn4.contentVerticalAlignment = .fill
         addBtn4.contentHorizontalAlignment = .fill
+        addBtn4.tag = 4
         addBtn4.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
         
@@ -106,14 +113,57 @@ class AddCustomer5: UIViewController{
     }
     
     // MARK: - Methods
-    func openLibrary(){
-        picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
+    func openLibrary(tag: Int){
+//        picker.sourceType = .photoLibrary
+//        present(picker, animated: false, completion: nil)
+        var configuration = PHPickerConfiguration()
+        configuration.selectionLimit = 1
+        configuration.filter = .any(of: [.images])
+        
+        let picker2 = PHPickerViewController(configuration: configuration)
+        picker2.delegate = self
+        self.present(picker2, animated: true,completion: nil)
+        
+        switch tag {
+        case 1:
+            self.field1.text = "업로드 완료"
+            break
+        case 2:
+            self.field2.text = "업로드 완료"
+            break
+        case 3:
+            self.field3.text = "업로드 완료"
+            break
+        case 4:
+            self.field4.text = "업로드 완료"
+            break
+        default:
+            print("실패")
+        }
     }
     
     func openCamera(){
         picker.sourceType = .camera
         present(picker, animated: false, completion: nil)
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        print("!!! Picker called !!!")
+            
+        picker.dismiss(animated: true)
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider,
+           itemProvider.canLoadObject(ofClass: UIImage.self){
+            itemProvider.loadObject(ofClass: UIImage.self){ (image, error) in
+                DispatchQueue.main.async {
+                    let image: UIImage = (image as? UIImage)!
+                    let imageData = image.jpegData(compressionQuality: 1.0)!
+                    self.uploadImageToServer(a: imageData)
+                }
+            }
+        }
     }
     
     // MARK: - Objc Methods
@@ -131,10 +181,11 @@ class AddCustomer5: UIViewController{
         }
     }
     
-    @objc func UploadFile(){
+    @objc func UploadFile(sender: UIButton!){
         let alert = UIAlertController(title: "사진 업로드", message: "원하는 방법을 선택하시오.", preferredStyle: .actionSheet)
         
-        let library = UIAlertAction(title: "사진앨범", style: .default){ (action) in self.openLibrary()
+        let library = UIAlertAction(title: "사진앨범", style: .default){ (action) in
+            self.openLibrary(tag: sender.tag)
         }
         
         let camera = UIAlertAction(title: "카메라", style: .default){ (action) in
@@ -221,9 +272,7 @@ class AddCustomer5: UIViewController{
 }
 
 // MARK: - Extension
+@available(iOS 14, *)
 extension AddCustomer5: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        print(info)
-    }
     
 }

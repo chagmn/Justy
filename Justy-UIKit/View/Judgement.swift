@@ -37,6 +37,7 @@ class Judgement: Common {
         backBtn.action = #selector(goBack)
         
         judgement.textColor = .black
+        judgement.text = ""
         
     }
     
