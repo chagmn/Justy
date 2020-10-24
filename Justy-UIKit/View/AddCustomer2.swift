@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 
 // 고객 기본 정보
 
@@ -19,6 +20,7 @@ class AddCustomer2: Common{
     var checkState1 = false
     var checkState2 = false
     var checkState3 = false
+    
     
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var text1: UILabel!
@@ -217,6 +219,9 @@ class AddCustomer2: Common{
     @objc func nextview(){
         if !nameField.text!.isEmpty && !yearField.text!.isEmpty && !dayField.text!.isEmpty && !monthField.text!.isEmpty && !phoneField.text!.isEmpty{
             guard  let controller =  self.storyboard?.instantiateViewController(identifier: "AddCustomer3") else { return }
+            
+            
+            
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }else{

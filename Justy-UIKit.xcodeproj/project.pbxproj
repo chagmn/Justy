@@ -26,6 +26,7 @@
 		76755FB0251357A300C2AF6B /* customerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76755FAF251357A200C2AF6B /* customerList.swift */; };
 		76793A38252EA65500787EED /* AddCustomer5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76793A37252EA65500787EED /* AddCustomer5.swift */; };
 		768C5631250A3A020016AED6 /* myPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C5630250A3A020016AED6 /* myPage.swift */; };
+		768E1F4A254331D500513BDF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E1F49254331D500513BDF /* User.swift */; };
 		7697AB5524ED08A300B8407E /* Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697AB5424ED08A300B8407E /* Join.swift */; };
 		76A087772519EEDD00DFF5DA /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A087762519EEDD00DFF5DA /* CustomerInfo.swift */; };
 		76B49AF1253C51F800809694 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B49AF0253C51F800809694 /* Text.swift */; };
@@ -56,6 +57,7 @@
 		76755FAF251357A200C2AF6B /* customerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customerList.swift; sourceTree = "<group>"; };
 		76793A37252EA65500787EED /* AddCustomer5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomer5.swift; sourceTree = "<group>"; };
 		768C5630250A3A020016AED6 /* myPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPage.swift; sourceTree = "<group>"; };
+		768E1F49254331D500513BDF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7697AB5424ED08A300B8407E /* Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Join.swift; sourceTree = "<group>"; };
 		76A087762519EEDD00DFF5DA /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
 		76B49AF0253C51F800809694 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -128,8 +130,8 @@
 				7614B1D924EAE4B3005359EF /* Login.swift */,
 				7697AB5424ED08A300B8407E /* Join.swift */,
 				768C5630250A3A020016AED6 /* myPage.swift */,
-				76A087762519EEDD00DFF5DA /* CustomerInfo.swift */,
 				76755FAF251357A200C2AF6B /* customerList.swift */,
+				76A087762519EEDD00DFF5DA /* CustomerInfo.swift */,
 				7646CC5D251CBE3E00527C75 /* AddCustomer1.swift */,
 				7608CB2A251CCDB700E449FA /* AddCustomer2.swift */,
 				76487EBF251F689800EC9442 /* AddCustomer3.swift */,
@@ -146,6 +148,7 @@
 		76B49AEF253C51EA00809694 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				768E1F49254331D500513BDF /* User.swift */,
 				76B49AF0253C51F800809694 /* Text.swift */,
 				76B49AF9253C533E00809694 /* Common.swift */,
 			);
@@ -313,6 +316,7 @@
 				7635140725381E9200F90783 /* Judgement.swift in Sources */,
 				76299F8A2518AE8B004CEDD0 /* customerCell.swift in Sources */,
 				76487EC0251F689800EC9442 /* AddCustomer3.swift in Sources */,
+				768E1F4A254331D500513BDF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

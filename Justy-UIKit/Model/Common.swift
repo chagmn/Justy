@@ -57,7 +57,12 @@ class Common: UIViewController {
                 texts.append(textItem)
                 
             }
-            print("\(texts)")
+            var fullString: String = ""
+            for i in texts {
+                fullString += i.text
+                fullString += " "
+            }
+            print("Text : \(fullString)")
         })
     }
     
