@@ -902,6 +902,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-5S-GAc">
+                                <rect key="frame" x="158" y="350" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KPI-mY-FQL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -921,6 +926,7 @@
                         <outlet property="evi4Btn" destination="bew-dQ-L23" id="8zb-aj-wDQ"/>
                         <outlet property="evi4Field" destination="TgV-bE-bMW" id="OIB-6z-cI9"/>
                         <outlet property="img" destination="w3g-Zd-qIH" id="lwy-A0-qfS"/>
+                        <outlet property="insertBtn" destination="Xvj-5S-GAc" id="uU5-hM-sh6"/>
                         <outlet property="nextBtn" destination="OdM-Eb-gF6" id="sWz-dq-Kj6"/>
                         <outlet property="text1" destination="NRz-IK-tgI" id="mEV-dS-kRz"/>
                         <outlet property="textField_AttestedCopy" destination="TeV-m2-hZD" id="kWG-WM-3qQ"/>

@@ -17,23 +17,25 @@ class Common: UIViewController {
     
     let mainColor = #colorLiteral(red: 1, green: 0.8799968362, blue: 0.2822909951, alpha: 1)
     let color = #colorLiteral(red: 0.9882352941, green: 0.9333333333, blue: 0.7137254902, alpha: 1)
+    var fullString: String = ""
+    var username: String = ""
   
     // OCR - using Kakao Vision
     // 이미지를 텍스트화 해서 서버에 POST함. 그걸 데이터 베이스에 저장해야함.
-    func uploadImageToServer(a: Data){
+    func uploadImageToServer(a: Data, name: String){
         let url = API.KAKAO_URL
         let key = API.KAKAO_CLIENT_ID
         
         //guard let image = UIImage(named: "demo") else { return }
         let image2: UIImage = UIImage(data: a)!
-        
+        self.username = name
 
         print("UploadImageToServer: ")
         
         let data = image2.jpegData(compressionQuality: 1.0)
         let headers: HTTPHeaders = [.authorization(key)]
         
-        
+        // 카카오 ocr에 post해서 나온 결과 Text에 저장
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(data!, withName: "image", fileName: "ocr_test.jpeg", mimeType: "image/jpeg")
         }, to: url, headers: headers)
@@ -57,13 +59,33 @@ class Common: UIViewController {
                 texts.append(textItem)
                 
             }
-            var fullString: String = ""
+            
             for i in texts {
-                fullString += i.text
-                fullString += " "
+                self.fullString += i.text
+                self.fullString += " "
             }
-            print("Text : \(fullString)")
+            print("Text : \(self.fullString)")
         })
+    }
+    
+    func putREST(){
+        print("putREST() called!!!!!")
+        print("string is \(self.fullString)")
+        
+        let param: [String: String] = [
+            "evi1": self.fullString,
+        ]
+        
+        
+        // 받은 Text를 REST API 서버에 전송
+        let urlString = "http://127.0.0.1:3000/users/\(username)"
+        let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let realURL = URL(string: encodedString)!
+        
+        AF.request(realURL, method: .put, parameters: param)
+            .responseJSON(completionHandler: { response in
+                debugPrint("putREST response : \(response)")
+            })
     }
     
 }

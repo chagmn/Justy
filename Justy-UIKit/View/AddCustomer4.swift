@@ -36,12 +36,14 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
     @IBOutlet weak var evi4Field: UITextField!
     @IBOutlet weak var evi4Btn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var insertBtn: UIButton!
     
     var name: String = ""
     var birth: String = ""
     var phone: String = ""
     var reason: String = ""
     var firstmarriage:Bool = false
+    var child = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,6 +139,17 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
         evi4Btn.tag = 4
         evi4Btn.addTarget(self, action: #selector(UploadFile), for: .touchUpInside)
         
+        
+        insertBtn.setTitle("입력", for: .normal)
+        insertBtn.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
+        insertBtn.tintColor = .white
+        insertBtn.backgroundColor = mainColor
+        insertBtn.layer.borderWidth = 1
+        insertBtn.layer.cornerRadius = 15
+        insertBtn.clipsToBounds = true
+        insertBtn.layer.borderColor = UIColor.clear.cgColor
+        insertBtn.addTarget(self, action: #selector(putData), for: .touchUpInside)
+        
         nextBtn.setTitle("next>", for: .normal)
         nextBtn.titleLabel?.font = UIFont.systemFont(ofSize: 21.0)
         nextBtn.tintColor = .white
@@ -209,26 +222,57 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
         if let itemProvider = itemProvider,
            itemProvider.canLoadObject(ofClass: UIImage.self){
             itemProvider.loadObject(ofClass: UIImage.self){ (image, error) in
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     let image: UIImage = (image as? UIImage)!
                     let imageData = image.jpegData(compressionQuality: 1.0)!
-                    self.uploadImageToServer(a: imageData)
+                    self.uploadImageToServer(a: imageData, name: name)
+                    self.putREST()
                 }
             }
         }
     }
     
+    // 정보 전달
+    func PostInfo(){
+        print("PostInfo() called")
+        
+        let params: [String: Any] = [
+            "name": self.name,
+            "birth": self.birth,
+            "phone": self.phone,
+            "firstmarriage": self.firstmarriage,
+            "reason": self.reason,
+            "child": self.child,
+            "evi1": "",
+            "evi2": "",
+            "evi3": "",
+            "evi4": "",
+            "evi5": "",
+            "evi6": "",
+            "evi7": "",
+            "evi8": "",
+        ]
+        
+        AF.request("http://127.0.0.1:3000/users", method: .post, parameters: params)
+            .responseJSON(completionHandler: { response in
+                debugPrint("response : \(response)")
+            })
+        
+    }
+    
+    
 
     // MARK: - Objc Methods
+    @objc func putData(){
+        child = childInfo_boy.text! + "남" + childInfo_girl.text! + "여"
+        
+        self.PostInfo()
+    }
+    
     @objc func nextview(){
-        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5") {
-            
-            var child: String = childInfo_boy.text! + "남" + childInfo_girl.text! + "여"
-            
-            var user = User(name: name, birth: birth, phone: phone, firstmarriage: firstmarriage, reason: reason, child: child)
-            
-            user.PostInfo()
-            
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5") as? AddCustomer5{
+            self.putData()
+            controller.name = self.name
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }
@@ -281,7 +325,7 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
         
         
         textField_AttestedCopy.translatesAutoresizingMaskIntoConstraints = false
-        textField_AttestedCopy.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 100).isActive = true
+        textField_AttestedCopy.topAnchor.constraint(equalTo: childInfo_boy.bottomAnchor, constant: 80).isActive = true
         textField_AttestedCopy.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: 80).isActive = true
         textField_AttestedCopy.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
@@ -305,7 +349,7 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
         childInfo_txt1.translatesAutoresizingMaskIntoConstraints = false
         childInfo_txt1.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -40).isActive = true
         childInfo_txt1.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        childInfo_txt1.topAnchor.constraint(equalTo: evi2Field.bottomAnchor, constant: 30).isActive = true
+        childInfo_txt1.topAnchor.constraint(equalTo: text1.bottomAnchor, constant: 80).isActive = true
         
         childInfo_boy.translatesAutoresizingMaskIntoConstraints = false
         childInfo_boy.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
@@ -325,8 +369,14 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
         childInfo_girl_txt.centerYAnchor.constraint(equalTo: childInfo_txt1.centerYAnchor).isActive = true
         childInfo_girl_txt.leadingAnchor.constraint(equalTo:childInfo_girl.trailingAnchor, constant: 5).isActive = true
         
+        insertBtn.translatesAutoresizingMaskIntoConstraints = false
+        insertBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        insertBtn.topAnchor.constraint(equalTo: childInfo_boy.bottomAnchor, constant: 20).isActive = true
+        insertBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        insertBtn.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
         evi3Field.translatesAutoresizingMaskIntoConstraints = false
-        evi3Field.topAnchor.constraint(equalTo: childInfo_txt1.bottomAnchor, constant: 30).isActive = true
+        evi3Field.topAnchor.constraint(equalTo: evi2Field.bottomAnchor, constant: 30).isActive = true
         evi3Field.trailingAnchor.constraint(equalTo: textField_AttestedCopy.trailingAnchor).isActive = true
         evi3Field.widthAnchor.constraint(equalTo: textField_AttestedCopy.widthAnchor).isActive = true
         

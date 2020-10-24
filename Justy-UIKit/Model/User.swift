@@ -18,21 +18,13 @@ struct User{
     var reason: String
     var child: String
     
-    
-    // 정보 전달
-    func PostInfo(){
-        let params: [String: Any] = [
-            "name": self.name,
-            "birth": self.birth,
-            "phone": self.phone,
-            "firstmarriage": self.firstmarriage,
-            "reason": self.reason,
-            "child": self.child
-        ]
-        
-        AF.request("http://127.0.0.1:3000/users",method: .post, parameters: params)
-            .responseJSON(completionHandler: { response in
-                debugPrint("response : \(response)")
-            })
+    init(name: String, birth: String, phone: String, firstmarriage: Bool, reason: String, child: String){
+        self.name = name
+        self.birth = birth
+        self.phone = phone
+        self.firstmarriage = firstmarriage
+        self.reason = reason
+        self.child = child
     }
+    
 }

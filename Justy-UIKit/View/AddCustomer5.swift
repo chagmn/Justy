@@ -28,6 +28,7 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
     @IBOutlet weak var addBtn4: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     
+    var name: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,7 +161,7 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
                 DispatchQueue.main.async {
                     let image: UIImage = (image as? UIImage)!
                     let imageData = image.jpegData(compressionQuality: 1.0)!
-                    self.uploadImageToServer(a: imageData)
+                    self.uploadImageToServer(a: imageData, name: self.name)
                 }
             }
         }
