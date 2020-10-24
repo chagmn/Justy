@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 import PhotosUI
 
 // 가족 관계 확인
@@ -17,8 +19,6 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
     let screenHeight: CGFloat = UIScreen.main.bounds.size.height
     let picker = UIImagePickerController()
     
-    
-
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var text1: UILabel!
     @IBOutlet weak var textField_AttestedCopy: UITextField!
@@ -37,6 +37,11 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
     @IBOutlet weak var evi4Btn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     
+    var name: String = ""
+    var birth: String = ""
+    var phone: String = ""
+    var reason: String = ""
+    var firstmarriage:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -216,7 +221,14 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
 
     // MARK: - Objc Methods
     @objc func nextview(){
-        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5"){
+        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5") {
+            
+            var child: String = childInfo_boy.text! + "남" + childInfo_girl.text! + "여"
+            
+            var user = User(name: name, birth: birth, phone: phone, firstmarriage: firstmarriage, reason: reason, child: child)
+            
+            user.PostInfo()
+            
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }

@@ -17,10 +17,10 @@ class AddCustomer2: Common{
     let year: [Int] = Array(1950...2020)
     let month: [Int] = Array(1...12)
     let day: [Int] = Array(1...31)
-    var checkState1 = false
-    var checkState2 = false
-    var checkState3 = false
-    
+    var checkState1:Bool = false
+    var checkState2:Bool = false
+    var checkState3:Bool = false
+    var checkmarriage:Bool = false
     
     @IBOutlet weak var img1: UIImageView!
     @IBOutlet weak var text1: UILabel!
@@ -218,10 +218,22 @@ class AddCustomer2: Common{
     
     @objc func nextview(){
         if !nameField.text!.isEmpty && !yearField.text!.isEmpty && !dayField.text!.isEmpty && !monthField.text!.isEmpty && !phoneField.text!.isEmpty{
-            guard  let controller =  self.storyboard?.instantiateViewController(identifier: "AddCustomer3") else { return }
+            guard  let controller =  self.storyboard?.instantiateViewController(identifier: "AddCustomer3") as? AddCustomer3 else { return }
+            var year = yearField.text!
+            var day = dayField.text!
+            var month = monthField.text!
             
-            
-            
+            if (Int(day)! / 10 == 0) {
+                day = "0"+day
+            }
+            if (Int(month)! / 10 == 0) {
+                month = "0"+month
+            }
+            controller.name = nameField.text!
+            controller.birth = year+month+day
+            controller.phone = phoneField.text!
+            controller.firstmarriage = checkmarriage
+     
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }else{
@@ -241,6 +253,7 @@ class AddCustomer2: Common{
             if !checkState1{
                 checkBox1.image = UIImage(systemName: "checkmark.square")
                 checkState1 = true
+                checkmarriage = true
             }else {
                 checkBox1.image = UIImage(systemName: "square")
                 checkState1 = false
@@ -249,6 +262,7 @@ class AddCustomer2: Common{
             if !checkState2{
                 checkBox2.image = UIImage(systemName: "checkmark.square")
                 checkState2 = true
+                checkmarriage = false
             }else {
                 checkBox2.image = UIImage(systemName: "square")
                 checkState2 = false
@@ -257,6 +271,7 @@ class AddCustomer2: Common{
             if !checkState3{
                 checkBox3.image = UIImage(systemName: "checkmark.square")
                 checkState3 = true
+                checkmarriage = false
             }else {
                 checkBox3.image = UIImage(systemName: "square")
                 checkState3 = false

@@ -12,8 +12,8 @@ import SwiftyJSON
 
 struct User{
     var name: String
-    var birth: Int
-    var phone: Int
+    var birth: String
+    var phone: String
     var firstmarriage: Bool
     var reason: String
     var child: String

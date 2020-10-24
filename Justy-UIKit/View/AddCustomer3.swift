@@ -18,6 +18,11 @@ class AddCustomer3: Common{
     @IBOutlet weak var textfield: UITextView!
     @IBOutlet weak var backBtn: UIButton!
     
+    var name: String = ""
+    var birth: String = ""
+    var phone: String = ""
+    var firstmarriage: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
@@ -89,9 +94,22 @@ class AddCustomer3: Common{
     }
     
     @objc func nextview(){
-        if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer4"){
-            controller.modalPresentationStyle = .currentContext
-            self.present(controller, animated: false, completion: nil)
+        if #available(iOS 14, *) {
+            if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer4") as? AddCustomer4 {
+                
+                controller.name = name
+                controller.birth = birth
+                controller.phone = phone
+                controller.reason = textfield.text!
+                controller.firstmarriage = firstmarriage
+                    
+                controller.modalPresentationStyle = .currentContext
+                print("정보 :: \(name), \(birth), \(phone), \(firstmarriage), \(textfield.text!)")
+                self.present(controller, animated: false, completion: nil)
+                
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
     
