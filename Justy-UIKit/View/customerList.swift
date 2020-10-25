@@ -18,6 +18,8 @@ class customerList: Common{
     @IBOutlet weak var leftBtn: UIBarButtonItem!
     
     var customerNameArray: [String] = []
+    var reasonArray: [String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,11 @@ class customerList: Common{
                
                 for (_, subJson): (String, JSON) in responseJson{
                     let name = subJson["name"].string!
-                    
+                    let reason = subJson["reason"].string!
+              
                     self.customerNameArray.append(name)
+                    self.reasonArray.append(reason)
+                    
                 }
         
                 self.config()
@@ -107,8 +112,10 @@ extension customerList: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell", for: indexPath) as! customerCell
         let name = customerNameArray[indexPath.row]
+        let reason = reasonArray[indexPath.row]
         
         cell.customerName.text = name
+        cell.customerReason = reason
         cell.customerProgress.progress = 0.1
         
         return cell
@@ -119,14 +126,14 @@ extension customerList: UITableViewDataSource{
         let index = tableView.indexPathForSelectedRow
         let cell = tableView.cellForRow(at: indexPath) as! customerCell
         
-        guard let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView") as? CustomerInfo else {
-            return
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView") as? CustomerInfo {
+            
+            controller.name = cell.customerName.text!
+            controller.reason = cell.customerReason
+            controller.progressNum = 0.1
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
         }
-        
-        controller.name = cell.customerName.text!
-        controller.progressNum = 0.1
-        controller.modalPresentationStyle = .currentContext
-        self.present(controller, animated: false, completion: nil)
         
     }
     

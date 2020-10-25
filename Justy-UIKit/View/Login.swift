@@ -15,8 +15,8 @@ class Login: Common, UITextFieldDelegate {
     @IBOutlet weak var textbox_ID: UITextField!
     @IBOutlet weak var textbox_PW: UITextField!
     
-    let admin_ID: String = "1"
-    let admin_PW: String = "1"
+    let admin_ID: String = "admin"
+    let admin_PW: String = "admin"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,8 @@ class Login: Common, UITextFieldDelegate {
         label_pw.textAlignment = .center
         
         // 로그인 부분 삭제하기 나중에
-        textbox_ID.text = "1"
-        textbox_PW.text = "1"
+        textbox_ID.text = "admin"
+        textbox_PW.text = "admin"
         
         textbox_PW.isSecureTextEntry = true
         self.textbox_ID.delegate = self

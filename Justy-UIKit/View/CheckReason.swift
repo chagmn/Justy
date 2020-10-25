@@ -1,34 +1,33 @@
 //
-//  Judgement.swift
+//  CheckReason.swift
 //  Justy-UIKit
 //
-//  Created by 창민 on 2020/10/15.
+//  Created by 창민 on 2020/10/25.
 //  Copyright © 2020 창민. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class Judgement: Common {
+class CheckReason: Common{
     
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var backBtn: UIBarButtonItem!
-    @IBOutlet weak var judgement: UITextView!
-    
-    var text = ""
+    @IBOutlet weak var reasonTextview: UITextView!
+    var reason: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
-        self.config()
-        
+        config()
+        autoLayout()
     }
     
     fileprivate func config(){
         naviBar.isTranslucent = false
         naviBar.barTintColor = mainColor
-        naviBar.topItem?.title = "판결문 확인"
+        naviBar.topItem?.title = "이혼 사유"
         naviBar.titleTextAttributes = [.foregroundColor : UIColor.white]
         naviBar.shadowImage = UIImage()
         
@@ -37,17 +36,24 @@ class Judgement: Common {
         backBtn.tintColor = .white
         backBtn.action = #selector(goBack)
         
-        judgement.textColor = .black
-        judgement.text = ""
-        judgement.isEditable = false
+        
+        reasonTextview.text = reason
+        reasonTextview.textColor = .black
+        reasonTextview.isEditable = false
         
     }
     
-    // MARK: - objc method
+    //MARK:- objc Function
     @objc func goBack(){
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView"){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerListView"){
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }
     }
+    
+    //MARK : - AutoLayout
+    func autoLayout(){
+        
+    }
+
 }

@@ -44,13 +44,14 @@ class myPage: Common {
         userImage.clipsToBounds = true
         
         // 사용자 이름은 DB에서 가져오기
+        userName.text = "변호사"
         
         customerLabel.text = "의뢰인 수 : "
         customerLabel.sizeToFit()
         customerLabel.textAlignment = .center
         
         // 고객수도 DB에서 가져오기
-        customerNum.text = "0명"
+        customerNum.text = "2명"
         customerNum.textColor = .white
         customerNum.textAlignment = .center
         customerNum.clipsToBounds = true
@@ -66,7 +67,7 @@ class myPage: Common {
         
         // 프로그레스바 설정
         progressBar.progressTintColor = mainColor
-        progressBar.progress = 0.5
+        progressBar.progress = 0.1
         
     }
     

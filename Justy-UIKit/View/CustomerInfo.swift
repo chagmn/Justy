@@ -25,10 +25,12 @@ class CustomerInfo: Common{
     @IBOutlet weak var evidenceImg2: UIImageView!
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var judgement: UIButton!
+    @IBOutlet weak var reasonView: UIButton!
     
     
     var name: String = ""
     var progressNum: Float = 0.0
+    var reason: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +106,17 @@ class CustomerInfo: Common{
         submitBtn.layer.cornerRadius = 10
         submitBtn.layer.borderWidth = 1
         submitBtn.layer.borderColor = UIColor.clear.cgColor
-        //submitBtn.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        submitBtn.addTarget(self, action: #selector(goEvidence), for: .touchUpInside)
+        
+        
+        reasonView.setTitle("이혼 사유 확인", for: .normal)
+        reasonView.tintColor = .white
+        reasonView.backgroundColor = mainColor
+        reasonView.clipsToBounds = true
+        reasonView.layer.cornerRadius = 10
+        reasonView.layer.borderWidth = 1
+        reasonView.layer.borderColor = UIColor.clear.cgColor
+        reasonView.addTarget(self, action: #selector(checkreason), for: .touchUpInside)
         
         judgement.setTitle("재판 결과 확인", for: .normal)
         judgement.tintColor = .white
@@ -119,6 +131,22 @@ class CustomerInfo: Common{
     // MARK: - objc methods
     @objc func checkJudgement(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgementView"){
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
+    @objc func checkreason(){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "checkReason") as? CheckReason{
+            controller.reason = self.reason
+            controller.modalPresentationStyle = .currentContext
+            self.present(controller, animated: false, completion: nil)
+        }
+    }
+    
+    @objc func goEvidence(){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "AddCustomer5"){
+            
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }

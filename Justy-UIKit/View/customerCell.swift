@@ -15,6 +15,7 @@ class customerCell:  UITableViewCell {
     @IBOutlet weak var customerProgress: UIProgressView!
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var customerInfoBtn: UIButton!
+    var customerReason: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
