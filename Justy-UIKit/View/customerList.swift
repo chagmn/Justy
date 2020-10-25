@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class customerList: Common{
 
@@ -15,13 +17,33 @@ class customerList: Common{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var leftBtn: UIBarButtonItem!
     
-    let customerInfo = [("일번",0.1),("이번",0.3),("삼번",0.5),("사번",0.7),("오번",0.9),]
+    var customerNameArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
         
-        self.config()
+    
+        getData()
+ 
+    }
+    
+    // REST API 서버에서 데이터 가져오기.
+    func getData(){
+
+        AF
+            .request("http://127.0.0.1:3000/users/")
+            .responseJSON(completionHandler: { response in
+                let responseJson =  JSON(response.value!)
+               
+                for (_, subJson): (String, JSON) in responseJson{
+                    let name = subJson["name"].string!
+                    
+                    self.customerNameArray.append(name)
+                }
+        
+                self.config()
+            })
     }
     
     fileprivate func config(){
@@ -77,17 +99,17 @@ extension customerList: UITableViewDelegate{
 extension customerList: UITableViewDataSource{
     // 테이블 뷰 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customerInfo.count
+        return customerNameArray.count
     }
     
     // 각 셀에 대한 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell", for: indexPath) as! customerCell
-        let (name, progress) = customerInfo[indexPath.row]
+        let name = customerNameArray[indexPath.row]
         
         cell.customerName.text = name
-        cell.customerProgress.progress = Float(progress)
+        cell.customerProgress.progress = 0.1
         
         return cell
     }
@@ -102,7 +124,7 @@ extension customerList: UITableViewDataSource{
         }
         
         controller.name = cell.customerName.text!
-        controller.progressNum = cell.customerProgress.progress
+        controller.progressNum = 0.1
         controller.modalPresentationStyle = .currentContext
         self.present(controller, animated: false, completion: nil)
         

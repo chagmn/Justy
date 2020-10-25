@@ -29,6 +29,7 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
     @IBOutlet weak var backBtn: UIButton!
     
     var name: String = ""
+    var check_tag:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,7 +162,7 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
                 DispatchQueue.main.async {
                     let image: UIImage = (image as? UIImage)!
                     let imageData = image.jpegData(compressionQuality: 1.0)!
-                    self.uploadImageToServer(a: imageData, name: self.name)
+                    self.uploadImageToServer(a: imageData, name: self.name, tag: self.check_tag)
                 }
             }
         }

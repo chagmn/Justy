@@ -44,6 +44,7 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
     var reason: String = ""
     var firstmarriage:Bool = false
     var child = ""
+    var check_tag: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -184,27 +185,31 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
         configuration.selectionLimit = 1
         configuration.filter = .any(of: [.images])
         
-        let picker2 = PHPickerViewController(configuration: configuration)
-        picker2.delegate = self
-        self.present(picker2, animated: true,completion: nil)
-        
         switch tag {
         case 1:
+            self.check_tag = 1
             self.textField_AttestedCopy.text = "등본 업로드 완료"
             break
         case 2:
+            self.check_tag = 2
             self.evi2Field.text = "가족관계증명서 업로드 완료"
             break
         case 3:
+            self.check_tag = 3
             self.evi3Field.text = "협의서 업로드 완료"
             break
         case 4:
+            self.check_tag = 4
             self.evi4Field.text = "심판 정본 업로드 완료"
             break
         default:
+            self.check_tag = 0
             print("실패")
         }
         
+        let picker2 = PHPickerViewController(configuration: configuration)
+        picker2.delegate = self
+        self.present(picker2, animated: true,completion: nil)
     }
     
     func openCamera(){
@@ -215,7 +220,7 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         
         print("!!! Picker called !!!")
-            
+        
         picker.dismiss(animated: true)
         let itemProvider = results.first?.itemProvider
         
@@ -225,8 +230,7 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
                 DispatchQueue.main.async { [self] in
                     let image: UIImage = (image as? UIImage)!
                     let imageData = image.jpegData(compressionQuality: 1.0)!
-                    self.uploadImageToServer(a: imageData, name: name)
-                    self.putREST()
+                    self.uploadImageToServer(a: imageData, name: name, tag: check_tag)
                 }
             }
         }
@@ -253,25 +257,25 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
             "evi8": "",
         ]
         
-        AF.request("http://127.0.0.1:3000/users", method: .post, parameters: params)
+        AF.request("http://127.0.0.1:3000/users", method: .post, parameters: params, encoding: URLEncoding.default)
             .responseJSON(completionHandler: { response in
-                debugPrint("response : \(response)")
+                debugPrint("PostInfo response : \(response)")
             })
         
     }
     
-    
+ 
 
     // MARK: - Objc Methods
     @objc func putData(){
         child = childInfo_boy.text! + "남" + childInfo_girl.text! + "여"
-        
         self.PostInfo()
     }
     
     @objc func nextview(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5") as? AddCustomer5{
-            self.putData()
+            
+            putEvidence()
             controller.name = self.name
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
