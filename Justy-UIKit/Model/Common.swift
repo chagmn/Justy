@@ -57,7 +57,7 @@ class Common: UIViewController {
             let jsonArray = responseJson["result"]
             
             for (_, subJson): (String, JSON) in jsonArray{
-                let text = subJson["recognition_words"].array!
+                let text = subJson["recognition_words"].arrayValue
                 let textItem = Text(text: text[0].string!)
                 texts.append(textItem)
             }

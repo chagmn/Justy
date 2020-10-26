@@ -51,7 +51,7 @@ class myPage: Common {
         customerLabel.textAlignment = .center
         
         // 고객수도 DB에서 가져오기
-        customerNum.text = "2명"
+        customerNum.text = "\(customerList.count)명"
         customerNum.textColor = .white
         customerNum.textAlignment = .center
         customerNum.clipsToBounds = true

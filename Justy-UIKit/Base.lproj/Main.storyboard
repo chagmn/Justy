@@ -1230,7 +1230,7 @@
                         <outlet property="evidence2" destination="GXP-NC-yAz" id="tBC-lV-24C"/>
                         <outlet property="evidenceImg1" destination="BC9-RQ-mTH" id="ldA-dM-wlS"/>
                         <outlet property="evidenceImg2" destination="hSZ-eW-AWQ" id="15v-R1-Wa1"/>
-                        <outlet property="judgement" destination="Zka-Fm-7O4" id="rJO-44-isz"/>
+                        <outlet property="judgementBtn" destination="Zka-Fm-7O4" id="i3s-bF-yxg"/>
                         <outlet property="naviBar" destination="e8h-uY-nPp" id="t1u-gC-t8Y"/>
                         <outlet property="progress" destination="aaG-Ec-tgY" id="0ut-KU-Uvv"/>
                         <outlet property="reasonView" destination="wab-Pj-Y27" id="Wol-Cg-XQO"/>
@@ -1330,7 +1330,7 @@
                     </view>
                     <connections>
                         <outlet property="backBtn" destination="AmX-ur-Bc9" id="RoC-UV-ucZ"/>
-                        <outlet property="judgement" destination="O70-HJ-A7c" id="NZw-cg-R4u"/>
+                        <outlet property="judgementView" destination="O70-HJ-A7c" id="nxc-eZ-e21"/>
                         <outlet property="naviBar" destination="U5p-5m-STR" id="vlw-Sg-1fC"/>
                     </connections>
                 </viewController>

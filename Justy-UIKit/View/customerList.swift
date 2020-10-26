@@ -19,7 +19,8 @@ class customerList: Common{
     
     var customerNameArray: [String] = []
     var reasonArray: [String] = []
-    
+    var judgementArray: [String] = []
+    static var count: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +40,14 @@ class customerList: Common{
                 let responseJson =  JSON(response.value!)
                
                 for (_, subJson): (String, JSON) in responseJson{
-                    let name = subJson["name"].string!
-                    let reason = subJson["reason"].string!
+                    let name = subJson["name"].stringValue
+                    let reason = subJson["reason"].stringValue
+                    let judgement = subJson["judgement"].stringValue
               
                     self.customerNameArray.append(name)
                     self.reasonArray.append(reason)
-                    
+                    self.judgementArray.append(judgement)
                 }
-        
                 self.config()
             })
     }
@@ -104,7 +105,8 @@ extension customerList: UITableViewDelegate{
 extension customerList: UITableViewDataSource{
     // 테이블 뷰 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return customerNameArray.count
+        customerList.count = customerNameArray.count
+        return customerList.count
     }
     
     // 각 셀에 대한 설정
@@ -113,9 +115,11 @@ extension customerList: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "customerCell", for: indexPath) as! customerCell
         let name = customerNameArray[indexPath.row]
         let reason = reasonArray[indexPath.row]
+        let judgement = judgementArray[indexPath.row]
         
         cell.customerName.text = name
         cell.customerReason = reason
+        cell.customerJudgement = judgement
         cell.customerProgress.progress = 0.1
         
         return cell
@@ -130,6 +134,7 @@ extension customerList: UITableViewDataSource{
             
             controller.name = cell.customerName.text!
             controller.reason = cell.customerReason
+            controller.judgement = cell.customerJudgement
             controller.progressNum = 0.1
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)

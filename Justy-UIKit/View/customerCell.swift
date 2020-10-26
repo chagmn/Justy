@@ -16,6 +16,7 @@ class customerCell:  UITableViewCell {
     @IBOutlet weak var customerName: UILabel!
     @IBOutlet weak var customerInfoBtn: UIButton!
     var customerReason: String = ""
+    var customerJudgement: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -255,6 +255,7 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
             "evi6": "",
             "evi7": "",
             "evi8": "",
+            "judgement" : "",
         ]
         
         AF.request("http://127.0.0.1:3000/users", method: .post, parameters: params, encoding: URLEncoding.default)

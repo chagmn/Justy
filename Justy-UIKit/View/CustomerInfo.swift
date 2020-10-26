@@ -24,13 +24,14 @@ class CustomerInfo: Common{
     @IBOutlet weak var evidence2: UILabel!
     @IBOutlet weak var evidenceImg2: UIImageView!
     @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var judgement: UIButton!
+    @IBOutlet weak var judgementBtn: UIButton!
     @IBOutlet weak var reasonView: UIButton!
     
     
     var name: String = ""
     var progressNum: Float = 0.0
     var reason: String = ""
+    var judgement: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,19 +119,20 @@ class CustomerInfo: Common{
         reasonView.layer.borderColor = UIColor.clear.cgColor
         reasonView.addTarget(self, action: #selector(checkreason), for: .touchUpInside)
         
-        judgement.setTitle("재판 결과 확인", for: .normal)
-        judgement.tintColor = .white
-        judgement.backgroundColor = mainColor
-        judgement.clipsToBounds = true
-        judgement.layer.cornerRadius = 10
-        judgement.layer.borderWidth = 1
-        judgement.layer.borderColor = UIColor.clear.cgColor
-        judgement.addTarget(self, action: #selector(checkJudgement), for: .touchUpInside)
+        judgementBtn.setTitle("재판 결과 확인", for: .normal)
+        judgementBtn.tintColor = .white
+        judgementBtn.backgroundColor = mainColor
+        judgementBtn.clipsToBounds = true
+        judgementBtn.layer.cornerRadius = 10
+        judgementBtn.layer.borderWidth = 1
+        judgementBtn.layer.borderColor = UIColor.clear.cgColor
+        judgementBtn.addTarget(self, action: #selector(checkJudgement), for: .touchUpInside)
     }
 
     // MARK: - objc methods
     @objc func checkJudgement(){
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgementView"){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgementView")as? Judgement{
+            controller.judgement = self.judgement
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }

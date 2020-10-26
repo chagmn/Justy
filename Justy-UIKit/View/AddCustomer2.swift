@@ -219,7 +219,7 @@ class AddCustomer2: Common{
     @objc func nextview(){
         if !nameField.text!.isEmpty && !yearField.text!.isEmpty && !dayField.text!.isEmpty && !monthField.text!.isEmpty && !phoneField.text!.isEmpty{
             guard  let controller =  self.storyboard?.instantiateViewController(identifier: "AddCustomer3") as? AddCustomer3 else { return }
-            var year = yearField.text!
+            let year = yearField.text!
             var day = dayField.text!
             var month = monthField.text!
             
@@ -253,7 +253,7 @@ class AddCustomer2: Common{
             if !checkState1{
                 checkBox1.image = UIImage(systemName: "checkmark.square")
                 checkState1 = true
-                checkmarriage = true
+                checkmarriage = false
             }else {
                 checkBox1.image = UIImage(systemName: "square")
                 checkState1 = false

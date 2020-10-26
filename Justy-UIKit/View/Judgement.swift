@@ -13,9 +13,11 @@ class Judgement: Common {
     
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var backBtn: UIBarButtonItem!
-    @IBOutlet weak var judgement: UITextView!
+    @IBOutlet weak var judgementView: UITextView!
+    
     
     var text = ""
+    var judgement: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +39,9 @@ class Judgement: Common {
         backBtn.tintColor = .white
         backBtn.action = #selector(goBack)
         
-        judgement.textColor = .black
-        judgement.text = ""
-        judgement.isEditable = false
+        judgementView.textColor = .black
+        judgementView.text = judgement
+        judgementView.isEditable = false
         
     }
     
