@@ -60,6 +60,7 @@ class Common: UIViewController {
                 let text = subJson["recognition_words"].arrayValue
                 let textItem = Text(text: text[0].string!)
                 texts.append(textItem)
+                print("OCR Result : \(textItem)")
             }
             
             switch tag{
@@ -148,5 +149,4 @@ class Common: UIViewController {
             })
         
     }
-    
 }

@@ -128,18 +128,23 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
         
         switch tag {
         case 1:
+            self.check_tag = 5
             self.field1.text = "업로드 완료"
             break
         case 2:
+            self.check_tag = 6
             self.field2.text = "업로드 완료"
             break
         case 3:
+            self.check_tag = 7
             self.field3.text = "업로드 완료"
             break
         case 4:
+            self.check_tag = 8
             self.field4.text = "업로드 완료"
             break
         default:
+            self.check_tag = 0
             print("실패")
         }
     }
@@ -159,10 +164,10 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
         if let itemProvider = itemProvider,
            itemProvider.canLoadObject(ofClass: UIImage.self){
             itemProvider.loadObject(ofClass: UIImage.self){ (image, error) in
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in 
                     let image: UIImage = (image as? UIImage)!
                     let imageData = image.jpegData(compressionQuality: 1.0)!
-                    self.uploadImageToServer(a: imageData, name: self.name, tag: self.check_tag)
+                    self.uploadImageToServer(a: imageData, name: name, tag: check_tag)
                 }
             }
         }
@@ -171,6 +176,9 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
     // MARK: - Objc Methods
     @objc func nextview(){
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomerLast"){
+            
+            putEvidence()
+            
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }
