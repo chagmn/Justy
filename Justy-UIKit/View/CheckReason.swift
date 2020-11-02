@@ -15,6 +15,7 @@ class CheckReason: Common{
     @IBOutlet weak var backBtn: UIBarButtonItem!
     @IBOutlet weak var reasonTextview: UITextView!
     var reason: String = ""
+    var name: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,9 @@ class CheckReason: Common{
     
     //MARK:- objc Function
     @objc func goBack(){
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerListView"){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView") as? CustomerInfo{
+            controller.name = self.name
+            controller.reason = self.reason
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }

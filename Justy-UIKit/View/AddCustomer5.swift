@@ -30,6 +30,15 @@ class AddCustomer5: Common, PHPickerViewControllerDelegate{
     
     var name: String = ""
     var check_tag:Int = 0
+    var evi1: String = ""
+    var evi2: String = ""
+    var evi3: String = ""
+    var evi4: String = ""
+    var evi5: String = ""
+    var evi6: String = ""
+    var evi7: String = ""
+    var evi8: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

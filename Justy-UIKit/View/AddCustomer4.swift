@@ -277,6 +277,7 @@ class AddCustomer4: Common, PHPickerViewControllerDelegate{
         if let controller = self.storyboard?.instantiateViewController(identifier: "AddCustomer5") as? AddCustomer5{
             
             putEvidence()
+
             controller.name = self.name
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)

@@ -15,7 +15,7 @@ class Judgement: Common {
     @IBOutlet weak var backBtn: UIBarButtonItem!
     @IBOutlet weak var judgementView: UITextView!
     
-    
+    var name = ""
     var text = ""
     var judgement: String = ""
     
@@ -47,7 +47,9 @@ class Judgement: Common {
     
     // MARK: - objc method
     @objc func goBack(){
-        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView"){
+        if let controller = self.storyboard?.instantiateViewController(withIdentifier: "customerInfoView") as? CustomerInfo{
+            controller.name = self.name
+            controller.judgement = self.judgement
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
         }

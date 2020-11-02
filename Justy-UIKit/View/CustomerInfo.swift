@@ -132,6 +132,7 @@ class CustomerInfo: Common{
     // MARK: - objc methods
     @objc func checkJudgement(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "JudgementView")as? Judgement{
+            controller.name = self.name
             controller.judgement = self.judgement
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)
@@ -140,6 +141,7 @@ class CustomerInfo: Common{
     
     @objc func checkreason(){
         if let controller = self.storyboard?.instantiateViewController(withIdentifier: "checkReason") as? CheckReason{
+            controller.name = self.name
             controller.reason = self.reason
             controller.modalPresentationStyle = .currentContext
             self.present(controller, animated: false, completion: nil)

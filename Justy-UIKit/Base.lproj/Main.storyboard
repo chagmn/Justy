@@ -1259,12 +1259,8 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jlt-2V-KGe">
-                                <rect key="frame" x="35" y="94" width="305" height="540"/>
+                                <rect key="frame" x="15" y="69" width="345" height="578"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="305" id="102-ox-fqS"/>
-                                    <constraint firstAttribute="height" constant="540" id="iL3-Bx-24z"/>
-                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1274,11 +1270,14 @@
                         <viewLayoutGuide key="safeArea" id="4Mb-g9-Vth"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Jlt-2V-KGe" firstAttribute="top" secondItem="vwu-yd-yDC" secondAttribute="bottom" constant="50" id="7TQ-Mh-70K"/>
+                            <constraint firstItem="Jlt-2V-KGe" firstAttribute="top" secondItem="vwu-yd-yDC" secondAttribute="bottom" constant="25" id="7TQ-Mh-70K"/>
+                            <constraint firstItem="Jlt-2V-KGe" firstAttribute="leading" secondItem="4Mb-g9-Vth" secondAttribute="leading" constant="15" id="HLp-6M-VYY"/>
                             <constraint firstItem="Jlt-2V-KGe" firstAttribute="centerX" secondItem="7b9-Ji-X8G" secondAttribute="centerX" id="IZ3-dH-lnZ"/>
                             <constraint firstItem="vwu-yd-yDC" firstAttribute="top" secondItem="4Mb-g9-Vth" secondAttribute="top" id="Ij0-K4-NyB"/>
+                            <constraint firstItem="4Mb-g9-Vth" firstAttribute="bottom" secondItem="Jlt-2V-KGe" secondAttribute="bottom" constant="20" id="NnR-pg-fji"/>
                             <constraint firstItem="vwu-yd-yDC" firstAttribute="leading" secondItem="4Mb-g9-Vth" secondAttribute="leading" id="b1x-AT-tot"/>
                             <constraint firstItem="vwu-yd-yDC" firstAttribute="trailing" secondItem="4Mb-g9-Vth" secondAttribute="trailing" id="vl5-ft-LDN"/>
+                            <constraint firstItem="4Mb-g9-Vth" firstAttribute="trailing" secondItem="Jlt-2V-KGe" secondAttribute="trailing" constant="15" id="wOu-JY-tNf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1300,7 +1299,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O70-HJ-A7c">
-                                <rect key="frame" x="35" y="94" width="305" height="543"/>
+                                <rect key="frame" x="15" y="64" width="345" height="583"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -1320,12 +1319,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U5p-5m-STR" firstAttribute="trailing" secondItem="FLB-BS-I1B" secondAttribute="trailing" id="3rR-kJ-MsW"/>
-                            <constraint firstItem="FLB-BS-I1B" firstAttribute="trailing" secondItem="O70-HJ-A7c" secondAttribute="trailing" constant="35" id="4Fd-qH-mvd"/>
-                            <constraint firstItem="O70-HJ-A7c" firstAttribute="top" secondItem="U5p-5m-STR" secondAttribute="bottom" constant="50" id="5pW-UW-bnp"/>
-                            <constraint firstItem="O70-HJ-A7c" firstAttribute="leading" secondItem="FLB-BS-I1B" secondAttribute="leading" constant="35" id="M6T-ax-q6o"/>
+                            <constraint firstItem="FLB-BS-I1B" firstAttribute="trailing" secondItem="O70-HJ-A7c" secondAttribute="trailing" constant="15" id="4Fd-qH-mvd"/>
+                            <constraint firstItem="O70-HJ-A7c" firstAttribute="top" secondItem="U5p-5m-STR" secondAttribute="bottom" constant="20" id="5pW-UW-bnp"/>
+                            <constraint firstItem="O70-HJ-A7c" firstAttribute="leading" secondItem="FLB-BS-I1B" secondAttribute="leading" constant="15" id="M6T-ax-q6o"/>
                             <constraint firstItem="U5p-5m-STR" firstAttribute="top" secondItem="FLB-BS-I1B" secondAttribute="top" id="QCB-Y4-7ha"/>
                             <constraint firstItem="U5p-5m-STR" firstAttribute="leading" secondItem="FLB-BS-I1B" secondAttribute="leading" id="b2f-64-i6a"/>
-                            <constraint firstItem="FLB-BS-I1B" firstAttribute="bottom" secondItem="O70-HJ-A7c" secondAttribute="bottom" constant="30" id="lrH-ot-CPs"/>
+                            <constraint firstItem="FLB-BS-I1B" firstAttribute="bottom" secondItem="O70-HJ-A7c" secondAttribute="bottom" constant="20" id="lrH-ot-CPs"/>
                         </constraints>
                     </view>
                     <connections>
